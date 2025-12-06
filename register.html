@@ -3,15 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registro Bookify</title>
 </head>
 <body>
-    <header>
-
+    <header> <!-- Borrar estilo: style="border: 2px dashed;" -->
+        <h1>Crea tu cuenta de Bookify</h1>
     </header>
 
+    <nav> <!-- Borrar estilo: style="border: 2px dashed;" -->
+            <h4>Catálogo</h4>
+            <ul>
+                <li>Artes</li>
+                <li>Ciencias</li>
+                <li>Salud</li>
+                <li>Sociales</li>
+                <li>Ingeniería</li>
+            </ul>
+
+            <h4>Reservas</h4>
+            <h4>Renovaciones</h4>
+
+    </nav>
 
     <main>
+
+        <section>
+
+            <h2>Registro</h2>
+            <form >
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" placeholder="Ingresa tu nombre" required><br><br>
+
+                <label for="email">Correo</label><br>
+                <input type="text" id="nombre" placeholder="Ingresa tu correo electrónico" required><br><br>
+
+                <label for="telefono">Teléfono</label><br>
+                <input type="number" id="telefono" placeholder="Ingresa tu teléfono/celular" required><br><br>
+
+                <label for="fechanaci">Fecha de nacimiento</label><br>
+                <input type="date" id="fechanaci" required><br><br>
+
+                <label for="perfil">Ocupación</label><br>
+                <select name="perfil" id="perfil">
+                    <option value="" disabled selected>Seleccione una Opción</option>
+                    <optgroup label="Usuario">
+                        <option value="visitante">Visitante</option>
+                        <option value="estudiante">Estudiante</option>
+                        <option value="docente">Docente</option>
+                        <option value="investigador">Investigador</option>
+                    </optgroup>
+                    <optgroup label="Personal">
+                        <option value="bibliotecario">Bibliotecario</option>
+                        <option value="auxiliar">Auxiliar de biblioteca</option>
+                        <option value="encargadoarchivo">Encargado de archivo</option>
+                    </optgroup>
+                </select><br><br>
+
+                <label for="contraseña">Contraseña</label><br>
+                <input type="password" id="contraseña" placeholder="Ingresa tu contraseña" required><br><br>
+                <label for="contraseñaconfirmacion">Confirmación de contraseña</label><br>
+                <input type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña" required><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+        </section>
 
     </main>
 
