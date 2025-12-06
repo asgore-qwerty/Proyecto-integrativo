@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
 </head>
+
 <body>
     <header>
-
+        <h1>Iniciar Sesión en Bookify</h1>
     </header>
 
-
     <main>
+        <section>
+            <form action="index.html" method="POST">
 
+                <label for="email">Correo Electrónico:</label>
+                <br>
+                <input type="email" id="email" class="email" placeholder="Ingresa tu email" required />
+                <br>
+                <br>
+                <label for="password">Contraseña:</label>
+                <br>
+                <input type="password" id="password" class="password" placeholder="Ingresa tu contraseña" required />
+                <br>
+                <a href="register.html">olvidé mi contraseña</a>
+                <br>
+                <br>
+                <button type="submit">Iniciar Sesión</button>
+                <br>
+                <a href="register.html">registrarse</a>
+
+            </form>
+        </section>
     </main>
 
-    
-    <footer>
-
-    </footer>
-    
+    <footer></footer>
 </body>
+
 </html>
