@@ -11,7 +11,8 @@
         <img src="bookify.png" alt="Logo" width="150">
     </header>
 
-    <nav> <!-- Borrar estilo: style="border: 2px dashed;" -->
+    <aside> <!-- Borrar estilo: style="border: 2px dashed;" -->
+        <nav>
             <h4>Catálogo</h4>
             <ul>
                 <li>Artes</li>
@@ -20,18 +21,22 @@
                 <li>Sociales</li>
                 <li>Ingeniería</li>
             </ul>
-
-            <h3>Reservas</h3>
-            <h3>Renovaciones</h3>
-
-    </nav>
+            <ul>
+                <li><a href="index.html">Reservas</a></li>
+                <li><a href="index.html">Renovaciones</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contáctenos</a></li>
+                <li><a href="login.html">Inicio de sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <main>
 
         <section>
 
             <h2>Registro</h2>
-            <form >
+            <form action="index.html">
                 <label for="nombre">Nombre</label><br>
                 <input type="text" id="nombre" placeholder="Ingresa tu nombre" required><br><br>
 
@@ -65,8 +70,13 @@
                 <label for="contraseñaconfirmacion">Confirmación de contraseña</label><br>
                 <input type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña" required><br><br>
 
+                <input type="checkbox" id="terminos"/>
+                <label for="terminos">Aceptar términos y condiciones</label><br><br>
                 <button type="submit">Enviar</button><br><br>
             </form>
+
+            <a href="login.html">Inicia sección acá</a><br><br>
+            
             
         </section>   
         <section>
