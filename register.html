@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Bookify</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header> 
-        <h1>Crea tu cuenta de Bookify</h1>
-        <img src="bookify.png" alt="Logo" width="150">
-    </header>
 
-    <aside> 
+<body>
+    <header>
+        <a href="index.html"><img src="bookify.png" width="10%" alt="Bookify" /></a>
         <nav>
-            <h2>Catálogo</h2>
+            <input class="cuadrobusqueda" type="text" placeholder="Buscar" />
+            <button class="botonbusqueda">🔍</button>
             <ul>
-                <li>Artes</li>
-                <li>Ciencias</li>
-                <li>Salud</li>
-                <li>Sociales</li>
-                <li>Ingeniería</li>
+                <li><a href="register.html">Registrarse</a></li>
+                <li><a href="login.html">Ingresar</a></li>
             </ul>
+        </nav>
+    </header>
+<div class="asideMainFooter">
+    <aside>
+        <nav>
             <ul>
-                <li><a href="index.html">Reservas</a></li>
-                <li><a href="index.html">Renovaciones</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contáctenos</a></li>
-                <li><a href="login.html">Inicio de sesión</a></li>
+                <h2>Categorías</h2>
+                <li><a href="#">Artes</a></li>
+                <li><a href="#">Ciencias</a></li>
+                <li><a href="#">Salud</a></li>
+                <li><a href="#">Sociales</a></li>
+                <li><a href="#">Ingeniería</a></li>
+                <h2><a href="#">Renovaciones</a></h2>
+                <h2><button class="botonreserva" href="#">Reservar</button></h2>
             </ul>
         </nav>
     </aside>
 
-    <main>
-
-        <section>
-
-            <h2>Registro</h2>
-            <form action="index.html">
+    <section class="mainFooter">
+        <main>
+        <section class="registro">
+            <h1>Registro</h1>
+            <form action="index.html" method="post">
                 <label for="nombre">Nombre</label><br>
                 <input type="text" id="nombre" placeholder="Ingresa tu nombre" required><br><br>
+
+                <label for="fechanaci">Fecha de nacimiento</label><br>
+                <input type="date" id="fechanaci" required><br><br>
 
                 <label for="email">Correo</label><br>
                 <input type="text" id="nombre" placeholder="Ingresa tu correo electrónico" required><br><br>
@@ -46,76 +53,26 @@
                 <label for="telefono">Teléfono</label><br>
                 <input type="number" id="telefono" placeholder="Ingresa tu teléfono/celular" required><br><br>
 
-                <label for="fechanaci">Fecha de nacimiento</label><br>
-                <input type="date" id="fechanaci" required><br><br>
-
-                <label for="perfil">Ocupación</label><br>
-                <select name="perfil" id="perfil">
-                    <option value="" disabled selected>Seleccione una Opción</option>
-                    <optgroup label="Usuario">
-                        <option value="visitante">Visitante</option>
-                        <option value="estudiante">Estudiante</option>
-                        <option value="docente">Docente</option>
-                        <option value="investigador">Investigador</option>
-                    </optgroup>
-                    <optgroup label="Personal">
-                        <option value="bibliotecario">Bibliotecario</option>
-                        <option value="auxiliar">Auxiliar de biblioteca</option>
-                        <option value="encargadoarchivo">Encargado de archivo</option>
-                    </optgroup>
-                </select><br><br>
-
                 <label for="contraseña">Contraseña</label><br>
                 <input type="password" id="contraseña" placeholder="Ingresa tu contraseña" required><br><br>
+                
                 <label for="contraseñaconfirmacion">Confirmación de contraseña</label><br>
                 <input type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña" required><br><br>
 
-                <input type="checkbox" id="terminos"/>
-                <label for="terminos">Aceptar términos y condiciones</label><br><br>
-                <button type="submit">Enviar</button><br><br>
+                <button type="submit">Registrarse</button><br><br>
             </form>
-
-            <a href="login.html">Inicia sección acá</a><br><br>
-            
-            
-        </section>   
-        <section>
-            <iframe width="400" height="300" src="https://www.youtube.com/embed/K9PrE044sLg" title="Dramatic Hamster [Original]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </section><br>
+        </section>
 
     </main>
-
     
     <footer>
-        
-        <table >
-            <thead>
-                <tr>
-                    <th>Sedes</th>
-                    <th>Líneas de atención</th>
-                    <th>Redes sociales</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Medellín</td>
-                    <td>+57 1122202121</td>
-                    <td>Facebook</td>
-                </tr>
-                <tr>
-                    <td>Envigado</td>
-                    <td>+57 2235468843</td>
-                    <td>Instagram</td>
-                </tr>
-                <tr>
-                    <td>Bello</td>
-                    <td>+57 4547871122</td>
-                    <td>TikTok</td>
-                </tr>
-            </tbody>
-        </table>
         <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
+        <h4>Política de privacidad • Términos y condiciones</h4>
     </footer>
+    </section>
+    
+</div>
+    
     
 </body>
 </html>
