@@ -7,8 +7,8 @@
 }
 
 html {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vh;
 }
 
 header {
@@ -53,14 +53,19 @@ header nav ul li {
 }
 
 aside {
-    height: 100%;
     border-collapse: collapse;
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+    display: flex;
+    padding: 1%;
     width: auto;
     background: linear-gradient(135deg, #606060, #000000);
     text-align: justify;
+    align-items: stretch;
+}
+
+aside nav {
+    position: sticky;
+    top: 4rem;
+    height: fit-content;
 }
 
 aside nav ul li {
@@ -95,17 +100,32 @@ body {
 }
 
 footer {
-    height: 10%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3rem;
     width: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #373737);
     text-align: center;
     font-size: 80%;
+    color: #8f846e;
+}
+
+footer a {
+    display: inline;
+    color: #8f846e;
+    text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+footer p {
+    text-shadow: 4px 4px 4px #0a0a0a;
 }
 
 .asideMainFooter {
     width: 100%;
     display: flex;
-    height: 100%;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .mainFooter {
@@ -118,6 +138,7 @@ footer {
 }
 
 main {
+    border-collapse: collapse;
     gap: 15px;
     padding: 1.5%;
     display: flex;
@@ -154,6 +175,7 @@ a {
 }
 
 article {
+    box-shadow: 5px 5px 15px -4px #000000;
     gap: 10%;
     width: 210px;
     background-color: #8b7355;
