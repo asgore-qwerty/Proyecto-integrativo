@@ -8,7 +8,14 @@
 
 html {
     height: 100vh;
-    width: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.5em;
 }
 
 header {
@@ -24,21 +31,23 @@ header {
 }
 
 header a {
+    white-space: normal;
+    min-width: 0;
     color: #775935;
 }
 
 header nav {
-    display: flex;
+    display: flex;    
     justify-content: space-around;
     box-sizing: border-box;
     padding-right: 3%;
     border-collapse: collapse;
-}
+    }
 
 header nav ul {
     display: flex;
     box-sizing: border-box;
-    gap: 20px;
+    gap: 2rem;
     padding-left: 3%;
     border-collapse: collapse;
 }
@@ -97,6 +106,9 @@ aside ul {
 body {
     background: linear-gradient(90deg, #373737, #473524, #82562f, #d8b08b);
     height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 footer {
@@ -143,17 +155,36 @@ main {
     padding: 1.5%;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-width: 0%;
     color: #cfb583;
     height: 100%;
 }
 
 main select {
-    width: 20%;
+    height: 70%;
+    width: 60%;
+    color: #cfb583;
+    background-color: #8b7355;
+    box-shadow: 5px 5px 15px -4px #000000;
+    border-radius: 10px;
+}
+
+main select label{
 }
 
 .filtros {
+    padding-top: 1rem;
+    padding-right: 4rem;
     display: flex;
     gap: 10px;
+}
+
+.titulofiltros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .registro {
@@ -183,7 +214,6 @@ article {
     padding: 15px;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 5px 5px 15px -4px #000000;
 }
 
 article table {
