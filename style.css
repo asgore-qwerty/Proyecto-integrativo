@@ -229,12 +229,12 @@ article h3 {
 }
 
 .recuadroFormulario {
-    margin-left: 4rem;
-    margin-top: 4rem;
+    margin-left: 5%;
+    margin-top: 5%;
     height: 100%;
     display: flex;
     width: 40%;
-    padding: 0.5%;
+    padding: 1%;
     align-items: center;
     flex-direction: column;
     box-shadow: 5px 5px 15px -4px #000000;
@@ -244,6 +244,12 @@ article h3 {
     border: none;
     padding-bottom: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+    
 }
 
 
@@ -255,6 +261,7 @@ article h3 {
 
 .recuadroFormulario a {
     color: #cfb583;
+    
 }
 
 .recuadroFormulario label {
@@ -309,8 +316,8 @@ article h3 {
     gap: 0.5rem;
     flex-wrap: wrap;
     width: 100%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .formRegistro .fila {
@@ -320,20 +327,10 @@ article h3 {
     padding: 2%;
 }
 
-.divDer{
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-start;
-}
 
-.divIzq{
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-end;
-}
 
 #fechanaci{
-    width: 10em;
+    width: 10.3em;
 }
 
 .recuadroFormularioR {
@@ -369,4 +366,8 @@ article h3 {
     font-size: 1.3em;
     display: flex;
     flex-direction: column;
+}
+
+ul{
+    list-style-type: none;
 }
