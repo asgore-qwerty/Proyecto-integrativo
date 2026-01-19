@@ -1,168 +1,82 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
+    font-family: 'Arial', sans-serif;
     display: grid;
     grid-template-areas: 
         "header header"
         "sidebar main"
         "footer footer";
-    grid-template-columns: 180px 1fr; 
-    grid-template-rows: 60px 1fr 100px;
-    height: 100vh;
-    background: radial-gradient(circle at center, #6b5331 0%, #1a1a1a 100%);
+    grid-template-columns: 165px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    
+    background: radial-gradient(circle at center, #6b5331 0%, #4a3a2a 100%);
     color: #fff;
-    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .header {
     grid-area: header;
-    background-color: #b5945a;
+    background-color: #b8965d;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 30px;
+    border-bottom: 2px solid #8c734b;
+    height: 60px;
 }
 
-.search {
-    border-radius: 4px;
-    border: none;
-    padding: 4px 10px;
-    width: 200px;
+.header img {
+    display: block;
+    height: 90px;
+    width: auto;
 }
 
-.sidebar {
-    grid-area: sidebar;
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-right: 1px solid #b5945a;
-}
-
-.sidebar h3 {
-    font-weight: normal;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.sidebar ul {
-    list-style: none;
-    margin-left: 10px;
-    margin-bottom: 30px;
-}
-
-.sidebar li {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #ccc;
-}
-
-.sidebar li::before {
-    content: "• ";
-    color: #fff;
-}
-
-.sidebar button {
-    background-color: #8c734b;
-    color: #d1b994;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-
-.main {
-    grid-area: main;
+.header nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
-
-.contact-box {
-    background-color: #c4a468;
-    width: 90%;
-    max-width: 900px;
-    height: 500px;
-    border-radius: 15px;
-    padding: 40px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-   
-    background-image: url('tu-logo-marca-agua.png'); 
-    background-repeat: no-repeat;
-    background-position: 90% center;
-    background-size: 300px;
-}
-
-.contact-box h2 {
-    color: #7d6b4a;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-weight: lighter;
-}
-
-
-.contact-box input {
-    display: block;
-    width: 180px;
-    margin-bottom: 12px;
-    padding: 8px;
-    border: none;
+.search {
+    display: inline-block;
+    padding: 8px 15px;
+    padding-left: 35px;
+    margin-right: 100px;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    
+    width: 280px;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23999" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #999;
 }
 
-.contact-box label {
-    display: block;
-    color: #7d6b4a;
-    margin-top: 15px;
-    margin-bottom: 5px;
+.search::placeholder {
+    color: #999;
 }
 
-.textarea-container {
-    position: relative;
-    width: 300px;
+.header-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.contact-box textarea {
-    width: 100%;
-    height: 120px;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+.header-right a {
+    display: inline-block;
+    color: #8b7355;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 5px 10px;
 }
-
-.contact-box .btn-enviar {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: #4b3f2f;
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.footer {
-    grid-area: footer;
-    background: linear-gradient(to bottom, transparent, #333);
-    text-align: center;
-    padding-top: 40px;
-}
-
-.footer-links { margin-bottom: 10px; }
-.footer-links a { color: #8c734b; text-decoration: none; margin: 0 20px; }
-.footer-bottom { background: #444; padding: 5px; font-size: 0.8rem; color: #aaa; }
-
-
-
-
-
