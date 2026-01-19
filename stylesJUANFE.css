@@ -37,12 +37,6 @@ html {
     height: 60px;
 }
 
-.header img {
-    display: block;
-    height: 90px;
-    width: auto;
-}
-
 .header nav {
     display: flex;
 }
