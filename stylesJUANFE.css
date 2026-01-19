@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 165px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    
+    background: radial-gradient(circle at center, #6b5331 0%, #4a3a2a 100%);
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    grid-area: header;
+    background-color: #b8965d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 30px;
+    border-bottom: 2px solid #8c734b;
+    height: 60px;
+}
+
+.header nav {
+    display: flex;
+}
+.search {
+    display: inline-block;
+    padding: 8px 15px;
+    padding-left: 35px;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+    width: 280px;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23999" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #999;
+}
+
+.search::placeholder {
+    color: #999;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-right a {
+    display: inline-block;
+    color: #8b7355;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+.header-right a:hover {
+    color: #6b5942;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #3d3027;
+    position: static;
+    padding: 25px 20px;
+    border-right: 1px solid #5a4a3a;
+}
+
+.sidebar h3 {
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+.sidebar ul {
+    display: block;
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.sidebar li {
+    display: block;
+    font-size: 14px;
+    color: #d4c5b0;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+}
+
+.sidebar li::before {
+    content: "• ";
+    color: #d4c5b0;
+    margin-right: 8px;
+}
+
+.sidebar button {
+    display: block; 
+    background-color: #8b7355;
+    color: #3d3027;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.sidebar button:hover {
+    background-color: #9d8566;
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+}
+.contact-box {
+    background-color: #c4a675;
+    width: 90%;
+    max-width: 700px;
+    min-height: 450px;
+    border-radius: 15px;
+    position: relative;
+    padding: 40px;
+    margin: 20px;
+    border: 3px solid #b8965d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-image: url(bookify.png);
+    background-repeat: no-repeat;
+    background-position: 85% 50%;
+    background-size: 250px;
+    opacity: 0.95;
+}
+
+.contact-box h2 {
+    display: block;
+    
+    color: #7d6b4a;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.contact-box input {
+    display: block; 
+    width: 300px;
+    background-color: white;
+    color: #999;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+.contact-box input::placeholder {
+    color: #aaa;
+}
+
+.contact-box label {
+    display: block;
+    color: #7d6b4a;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.textarea-container {
+    position: relative;
+    width: 380px;
+    margin-top: 10px;
+}
+
+.contact-box textarea {
+    display: block;
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    resize: none;
+    padding: 12px;
+    padding-bottom: 45px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+}
+
+.contact-box textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-box .btn-enviar {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: #4b3f2f;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 6px 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-box .btn-enviar:hover {
+    background-color: #3a3024;
+}
+.footer {
+    grid-area: footer;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    text-align: center;
+    padding: 30px 20px 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer a {
+    display: inline-block;
+    color: #b8965d;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 0 15px;
+}
+
+.footer a:hover {
+    color: #d4c5b0;
+}
+
+.footer br + h3 {
+    margin-top: 15px;
+}
+
+.footer h3 {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #999;
+    line-height: 1.8;
+    margin-top: 15px;
+    padding: 0;
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        position: static;
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .search {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .header-right {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .sidebar {
+        border-right: none;
+        border-top: 1px solid #5a4a3a;
+    }
+    
+    .contact-box {
+        width: 95%;
+        padding: 30px 20px;
+        background-position: center bottom;
+        background-size: 180px;
+    }
+    
+    .contact-box input,
+    .textarea-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-box {
+        padding: 25px 15px;
+    }
+    
+    .contact-box h2 {
+        font-size: 24px;
+    }
+}

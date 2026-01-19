@@ -5,123 +5,385 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="src/imgs/bookify_logo.png" />
 </head>
 
 <body>
     <header>
-        <a href="index.html"><img src="bookify.png" width="200" alt="Bookify"/></a>
+        <a href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
         <nav>
             <input type="text" placeholder="Buscar" />
-            <button>🔍</button>
+            <button class="botonbusqueda">🔍</button>
             <ul>
-                <li><a href="register.html">Registrarse</a></li>
-                <li><a href="login.html">Ingresar</a></li>
+                <li><a href="register.html" style="text-decoration: none">Registrarse</a></li>
+                <li><a href="login.html" style="text-decoration: none">Ingresar</a></li>
             </ul>
         </nav>
     </header>
-    <aside>
-        <nav>
-            <ul>
-                <h2>Categorías</h2>
-                <li><a href="#">Artes</a></li>
-                <li><a href="#">Ciencias</a></li>
-                <li><a href="#">Salud</a></li>
-                <li><a href="#">Sociales</a></li>
-                <li><a href="#">Ingeniería</a></li>
-                <h2><a href="#">Reservar</a></h2>
-                <h2><a href="#">Renovaciones</a></h2>
-            </ul>
-        </nav>
-    </aside>
+    <div class="asideMainFooter">
+        <aside>
+            <nav>
+                <ul>
+                    <h2>Categorías</h2>
+                    <li><a href="#">Artes</a></li>
+                    <li><a href="#">Ciencias</a></li>
+                    <li><a href="#">Salud</a></li>
+                    <li><a href="#">Sociales</a></li>
+                    <li><a href="#">Ingeniería</a></li>
+                    <h2><a href="#">Renovaciones</a></h2>
+                    <button class="botonreserva" href="#">Reservar</button>
+                </ul>
+            </nav>
+        </aside>
 
-    <main>
-        <h1>Catálogo de Libros</h1>
-        <select>
-            <option label="Filtro" disabled selected></option>
-            <option value="autor">Autor</option>
-            <option value="titulo">Titulo</option>
-            <option value="tema">Tema</option>
-            <option value="editorial">Editorial</option>
-            <option value="serie">Serie</option>            
-        </select>
-        <select>
-            <option label="Ordenar por" disabled selected></option>
-            <option value="ascendente">A-Z</option>
-            <option value="descendente">Z-A</option>
-            <option value="masreciente">Más reciente</option>
-            <option value="masantiguo">Más antiguo primero</option>
-            <option value="populares">Los más populares</option>
-        </select>        
-            <article>
-                <a href="#"><img src="src/imgs/portadas_libros/dostoyevski_001.webp" width="180" alt="Portada de crimen y castigo"></a>
-                <h3>Crimen y castigo</h3>
-                <table>
-                    <tr>
-                        <th>Autor</th>
-                        <td>Fiódor Dostoyevski</td>
-                    </tr>
-                    <tr>
-                        <th>Año</th>
-                        <td>1866</td>
-                    </tr>
-                </table>
-            </article>
-            <article>
-                <a href="#"><img src="src/imgs/portadas_libros/matthaig_001.webp" width="180" alt="Portada de La biblioteca de la medianoche"></a>
-                <h3>La biblioteca de la medianoche</h3>
-                <table>
-                    <tr>
-                        <th>Autor</th>
-                        <td>Matt Haig</td>
-                    </tr>
-                    <tr>
-                        <th>Año</th>
-                        <td>2020</td>
-                    </tr>
-                </table>
-            </article>
-            <article>
-                <a href="#"><img src="src/imgs/portadas_libros/gabrielgarcia_001.webp" width="180" alt="Portada de cien años de soledad"></a>
-                <h3>Cien años de soledad</h3>
-                <table>
-                    <tr>
-                        <th>Autor</th>
-                        <td>Gabriel García Márquez</td>
-                    </tr>
-                    <tr>
-                        <th>Año</th>
-                        <td>1967</td>
-                    </tr>
-                </table>
-            </article>
-            <article>
-                <a href="#"><img src="src/imgs/portadas_libros/nietzsche_001.jpg" width="180" alt="Portada de así habló Zaratustra"></a>
-                <h3>Así habló Zaratustra</h3>
-                <table>
-                    <tr>
-                        <th>Autor</th>
-                        <td>Así habló Zaratustra</td>
-                    </tr>
-                    <tr>
-                        <th>Año</th>
-                        <td>1883-1885</td>
-                    </tr>
-                </table>
-            </article>
-            <br>
-            <br>
-            <article>
-                <h4>Échale un vistazo a nuestra biblioteca</h4>
-                <iframe width="400" height="220" src="https://www.youtube.com/embed/vvKUuFk_uWI" title="Books Shelves Library Reading by Continuous  4K | no copyright stock video footage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </article>
-    </main>
 
-    <footer>
-        <a href="contact.html">Donaciones</a>
-        <a href="contact.html">Contactenos</a>
-        <a href="index.html">Sobre nosotros</a>
-        <p>© Bookify 2025</p>
-    </footer>
+
+        <div class="mainFooter">
+            <main>
+                <section class="titulofiltros">
+                    <h1>Catálogo de Libros</h1>
+                    <section class="filtros">
+                        <select>
+                            <option label="Filtro" disabled selected></option>
+                            <option value="autor">Autor</option>
+                            <option value="titulo">Titulo</option>
+                            <option value="tema">Tema</option>
+                            <option value="editorial">Editorial</option>
+                            <option value="serie">Serie</option>
+                        </select>
+                        <select>
+                            <option label="Ordenar por" disabled selected></option>
+                            <option value="ascendente">A-Z</option>
+                            <option value="descendente">Z-A</option>
+                            <option value="masreciente">Más reciente</option>
+                            <option value="masantiguo">Más antiguo primero</option>
+                            <option value="populares">Los más populares</option>
+                        </select>
+                    </section>
+                </section>
+                <section class="libros">
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/dostoyevski_001.webp" width="180"
+                                alt="Portada de crimen y castigo"></a>
+                        <h3>Crimen y castigo</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Fiódor Dostoyevski</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1866</td>
+                            </tr>
+                        </table>
+                    </article>
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/matthaig_001.webp" width="180"
+                                alt="Portada de La biblioteca de la medianoche"></a>
+                        <h3>La biblioteca de la medianoche</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Matt Haig</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>2020</td>
+                            </tr>
+                        </table>
+                    </article>
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/gabrielgarcia_001.webp" width="180"
+                                alt="Portada de cien años de soledad"></a>
+                        <h3>Cien años de soledad</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Gabriel García Márquez</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1967</td>
+                            </tr>
+                        </table>
+                    </article>
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/nietzsche_001.jpg" width="180"
+                                alt="Portada de así habló Zaratustra"></a>
+                        <h3>Así habló Zaratustra</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Así habló Zaratustra</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1883-1885</td>
+                            </tr>
+                        </table>
+                    </article>
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/oscarwilde_001.jpg" width="180"
+                                alt="Portada de El retrato de Dorian Gray"></a>
+                        <h3>El retrato de Dorian Gray</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Oscar Wilde</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1890</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/marcelproust_001.webp" width="180"
+                                alt="Portada de En busca del tiempo perdido"></a>
+                        <h3>En busca del tiempo perdido</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Marcel Proust</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1913</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/platon_001.png" width="180"
+                                alt="Portada de La República"></a>
+                        <h3>La República</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Platón</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>375 a.C.</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/alighieri_001.png" width="180"
+                                alt="Portada de La Divina Comedia"></a>
+                        <h3>La Divina Comedia</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Dante Alighieri</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1320</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/tolstoi_001.webp" width="180"
+                                alt="Portada de Ana Karenina"></a>
+                        <h3>Ana Karenina</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Lev Tolstói</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1877</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/marco_aurelio_001.jpg" width="180"
+                                alt="Portada de Meditaciones"></a>
+                        <h3>Meditaciones</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Marco Aurelio</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>180 d.C.</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/thomas_mann_001.webp" width="180"
+                                alt="Portada de La montaña mágica"></a>
+                        <h3>La montaña mágica</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Thomas Mann</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1924</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/maquiavelo_001.jpg" width="180"
+                                alt="Portada de El Príncipe"></a>
+                        <h3>El Príncipe</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Nicolás Maquiavelo</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1532</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/goethe_001.webp" width="180"
+                                alt="Portada de Fausto"></a>
+                        <h3>Fausto</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Johann Wolfgang von Goethe</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1808</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/zweig_001.jpg" width="180"
+                                alt="Portada de El mundo de ayer"></a>
+                        <h3>El mundo de ayer</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Stefan Zweig</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1942</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/kant_001.webp" width="180"
+                                alt="Portada de Crítica de la razón pura"></a>
+                        <h3>Crítica de la razón pura</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Immanuel Kant</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1781</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/camus_001.webp" width="180"
+                                alt="Portada de El mito de Sísifo"></a>
+                        <h3>El mito de Sísifo</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Albert Camus</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1942</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/janeausten_001.avif" width="180"
+                                alt="Portada de Orgullo y prejuicio"></a>
+                        <h3>Orgullo y prejuicio</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Jane Austen</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1813</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/schopenhauer_001.webp" width="180"
+                                alt="Portada de El mundo como voluntad y representación"></a>
+                        <h3>El mundo como voluntad y representación</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Arthur Schopenhauer</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1818</td>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <article>
+                        <a href="#"><img src="src/imgs/portadas_libros/borges_001.jpg" width="180"
+                                alt="Portada de El Aleph"></a>
+                        <h3>El Aleph</h3>
+                        <table>
+                            <tr>
+                                <th>Autor</th>
+                                <td>Jorge Luis Borges</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1949</td>
+                            </tr>
+                        </table>
+                    </article>
+                    <br>
+                    <br>
+                    <!--<article>
+                        
+                        <h4>Échale un vistazo a nuestra biblioteca</h4>
+                            <iframe width="400" height="220" src="https://www.youtube.com/embed/vvKUuFk_uWI"
+                            title="Books Shelves Library Reading by Continuous  4K | no copyright stock video footage"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </article> -->
+                </section>
+            </main>
+
+            <footer>
+                <a href="contact.html">Donaciones</a>
+                <a href="contact.html">Contactenos</a>
+                <a href="index.html">Sobre nosotros</a>
+                <p>© Bookify 2025</p>
+            </footer>
+        </div>
+    </div>
 </body>
 
 </html>
