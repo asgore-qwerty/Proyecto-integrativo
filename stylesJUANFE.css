@@ -148,3 +148,98 @@ html {
     padding: 40px 20px;
     position: relative;
 }
+.contact-box {
+    background-color: #c4a675;
+    width: 90%;
+    max-width: 700px;
+    min-height: 450px;
+    border-radius: 15px;
+    position: relative;
+    padding: 40px;
+    margin: 20px;
+    border: 3px solid #b8965d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-image: url(bookify.png);
+    background-repeat: no-repeat;
+    background-position: 85% 50%;
+    background-size: 250px;
+    opacity: 0.95;
+}
+
+.contact-box h2 {
+    display: block;
+    
+    color: #7d6b4a;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.contact-box input {
+    display: block; 
+    width: 300px;
+    background-color: white;
+    color: #999;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+.contact-box input::placeholder {
+    color: #aaa;
+}
+
+.contact-box label {
+    display: block;
+    color: #7d6b4a;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.textarea-container {
+    position: relative;
+    width: 380px;
+    margin-top: 10px;
+}
+
+.contact-box textarea {
+    display: block;
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    resize: none;
+    padding: 12px;
+    padding-bottom: 45px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+}
+
+.contact-box textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-box .btn-enviar {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: #4b3f2f;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 6px 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-box .btn-enviar:hover {
+    background-color: #3a3024;
+}
