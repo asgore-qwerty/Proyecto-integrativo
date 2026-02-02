@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-screen w-screen text-base overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="shortcut icon" type="image/png" href="src/imgs/bookify_logo.png" />
 </head>
 
-<body>
-    <header>
-        <a href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
-        <nav>
-            <input class="cuadrobusqueda" type="text" placeholder="Buscar" />
-            <button class="botonbusqueda">🔍</button>
-            <ul>
-                <li><a href="register.html">Registrarse</a></li>
-                <li><a href="login.html">Ingresar</a></li>
+<body class="m-0 p-0 ">
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center">
+        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
+        <nav class="flex justify-around pr-2">
+            <input class="bg-[#ffffff]" type="text" placeholder="Buscar" />
+            <button class="h-1/2 mr-1">🔍</button>
+            <ul class="flex gap-2 pl-2">
+                <li class="inline"><a href="register.html">Registrarse</a></li>
+                <li class="inline"><a href="login.html">Ingresar</a></li>
             </ul>
         </nav>
     </header>
-    <div class="asideMainFooter">
+    <div class="h-auto w-full flex min-h-screen m-0 gap-2">
         <aside>
             <nav>
                 <ul>
@@ -32,24 +33,24 @@
                     <li><a href="#">Sociales</a></li>
                     <li><a href="#">Ingeniería</a></li>
                     <h2><a href="#">Renovaciones</a></h2>
-                    <button class="botonreserva" href="#">Reservar</button>
+                    <button  href="#">Reservar</button>
                 </ul>
             </nav>
         </aside>
-        <section class="mainFooter">
-            <main class="contenidoCentradoMain">
-                <div class="recuadroFormulario">
-                    <h1>Iniciar sesión</h1>
+        <section class="gap-6 w-full h-full flex flex-col justify-around content-around">
+            <main class="h-full w-full gap-15 p-2 flex flex-col min-w-0 text-[#cfb583] items-center">
+                <div style="box-shadow: 5px 5px 15px -4px #000000" class="lg:w-74 ml-2 mt-2 h-full flex w-auto p-4 items-center flex-col bg-[#8b7355] rounded-xl text-[#cfb583] border-none pb-px flex-wrap">
+                    <h1 class="text-4xl">Iniciar sesión</h1>
                     <br>
-                    <form action="index.html" method="POST">
+                    <form class="flex flex-col flex-wrap whitespace-normal justify-items-center gap-1" action="index.html" method="POST">
                         <label for="email">Usuario:</label>
                         
-                        <input type="email" id="email" class="email" placeholder="Ingrese su usuario" required />
+                        <input class="bg-[#ffffff]" type="email" id="email" class="email" placeholder="Ingrese su usuario" required />
                         <br />
                        
                         <label for="password">Contraseña:</label>
                         
-                        <input type="password" id="password" class="password" placeholder="Ingrese su contraseña"
+                        <input class="bg-[#ffffff]" type="password" id="password" class="password" placeholder="Ingrese su contraseña"
                             required />
                         
                         <div class="recuerdame">
@@ -61,13 +62,13 @@
                         <a href="register.html">Olvidé mi contraseña</a>
                       
                         <br />
-                        <button class="botonIngresar" type="submit">Ingresar</button>
+                        <button style="box-shadow: 5px 5px 15px -4px #000000" class="botonRegistro bg-[#64533e] border-none p-1 rounded-lg cursor-pointer text-[#ebcc90] w-21 flex justify-around self-center " type="submit">Ingresar</button>
                         <br />
                     </form>
                 </div>
             </main>
             <br />
-            <footer>
+            <footer class="fixed bottom-0 left-0 h-16 px w-full text-center text-sm text-[#8f846e]  ">
                 <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
                 <h4>Política de privacidad • Términos y condiciones</h4>
             </footer>
