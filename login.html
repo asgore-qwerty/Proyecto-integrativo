@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="h-screen w-screen text-base overflow-x-hidden">
+<html lang="es" class="min-h-screen w-screen text-base ">
 
 <head>
     <meta charset="UTF-8" />
@@ -10,12 +10,16 @@
     <link rel="shortcut icon" type="image/png" href="src/imgs/bookify_logo.png" />
 </head>
 
-<body class="m-0 p-0 ">
-    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center">
+<body class="m-0 p-0 h-full overflow-x-hidden">
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center gap-2">
         <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
-        <nav class="flex justify-around pr-2">
-            <input class="bg-[#ffffff]" type="text" placeholder="Buscar" />
+        <nav class="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-around pr-10">
+            <div class="flex flex-nowrap ">
+                <input class="bg-[#ffffff]" type="text" placeholder="Buscar" />
             <button class="h-1/2 mr-1">🔍</button>
+
+            </div>
+            
             <ul class="flex gap-2 pl-2">
                 <li class="inline"><a href="register.html">Registrarse</a></li>
                 <li class="inline"><a href="login.html">Ingresar</a></li>
