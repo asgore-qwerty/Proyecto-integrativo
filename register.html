@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="text-base overflow-x-hidden h-screen w-screen">
+<html lang="en" class="text-base h-screen w-screen">
 
 <head>
     <meta charset="UTF-8" />
@@ -10,19 +10,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="m-0 p-0">
-    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center">
-        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
-        <nav class="flex justify-around pr-2 sticky">
-            <input class="bg-[#ffffff]" type="text" placeholder="Buscar" />
-            <button class="h-1/2 mr-1">🔍</button>
+<body class="m-0 p-0 h-full overflow-x-hidden">
+    <button class="fixed bottom-10 right-6 z-50 w-14 h-14 flex items-center justify-center shadow-xl"><a
+            href="contact.html"><img src="src/imgs/BtnContact.png" alt=""></a></button>
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center gap-2">
+        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/bookify.png"
+                width="200" alt="Bookify" /></a>
+        <nav class="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-around pr-10">
+            <div class="flex flex-nowrap justify-end">
+                <input class="bg-[#ffffff] w-25 sm:w-40 md:w-40 lg:w-40 xl:w-40" type="text" placeholder="Buscar" />
+                <button class="h-1/2 mr-1">🔍</button>
+            </div>
             <ul class="flex gap-2 pl-2">
-                <li class="inline"><a href="register.html">Registrarse</a></li>
-                <li class="inline"><a href="login.html">Ingresar</a></li>
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]"
+                        href="register.html">Registrarse</a></li>
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]" href="login.html">Ingresar</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <div class="h-auto w-full flex min-h-screen m-0 gap-2 justify-around">
+    <div class="h-full w-full flex m-0 gap-2 justify-around">
         <aside>
             <nav>
                 <ul>
@@ -38,59 +45,68 @@
             </nav>
         </aside>
 
-        <section class="gap-6 w-full h-full flex flex-col justify-around content-around">
-            <main class="contenidoCentradoMain gap-5 p-2 flex flex-col flex-1 min-w-0 text-[#cfb583] items-center">
-                <section style="box-shadow: 5px 5px 15px -4px #000000" class="recuadroFormulario ml-2 mt-2 h-full flex w-auto p-3 items-center flex-col bg-[#8b7355] rounded-xl text-[#cfb583] border-none pb-px flex-wrap">
+        <section class="w-full h-full flex flex-col justify-around content-around">
+            <main class="contenidoCentradoMain flex-1 overflow-x-hidden flex flex-col min-w-0 text-[#cfb583] items-center">
+                <section style="box-shadow: 5px 5px 15px -4px #000000" class="recuadroFormulario h-auto mt-8 sm:mt-15 md:mt-15 lg:mt-15 xl:mt-15 flex w-auto p-3 items-center flex-col bg-[#8b7355] rounded-xl text-[#cfb583] border-none pb-px flex-wrap">
                     <h1 class="text-4xl">Registro</h1> <br>
-                    <form class="formRegistro flex flex-col flex-wrap whitespace-normal justify-items-center w-auto" action="index.html" method="post">
-                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-2 flex flex-col lg:flex-row">
+                    <form class="formRegistro flex flex-col flex-wrap whitespace-normal justify-items-center w-auto"
+                        action="index.html" method="post">
+                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 flex flex-col gap-2 lg:flex-row">
                             <div>
                                 <label class="text-lg flex flex-col" for="nombre">Nombre</label>
-                                <input class="bg-[#ffffff]" type="text" id="nombre" placeholder="Ingresa tu nombre" required />
+                                <input class="bg-[#ffffff] w-50" type="text" id="nombre" placeholder="Ingresa tu nombre"
+                                    required />
                             </div>
 
                             <div>
                                 <label class="text-lg flex flex-col" for="fechanaci">Fecha de nacimiento</label>
-                                <input class="bg-[#ffffff] w-43" type="date" id="fechanaci" required />
+                                <input class="bg-[#ffffff] w-50" type="date" id="fechanaci" required />
                             </div>
                         </div>
-                        
-                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-2 flex flex-col lg:flex-row">
+
+                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2  flex flex-col gap-2 lg:flex-row">
                             <div>
                                 <label class="text-lg flex flex-col" for="email">Correo</label>
-                                <input class="bg-[#ffffff]" type="text" id="nombre" placeholder="Ingresa tu correo electrónico" required />
+                                <input class="bg-[#ffffff] w-50" type="text" id="nombre"
+                                    placeholder="Ingresa tu correo electrónico" required />
                             </div>
 
                             <div>
                                 <label class="text-lg flex flex-col" for="telefono">Teléfono</label>
-                                <input class="bg-[#ffffff]" type="number" id="telefono" placeholder="Ingresa tu teléfono/celular" required />
+                                <input class="bg-[#ffffff] w-50" type="number" id="telefono"
+                                    placeholder="Ingresa tu teléfono/celular" required />
                             </div>
                         </div>
 
-                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 gap-2 flex flex-col lg:flex-row">
+                        <div
+                            class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2  flex flex-col gap-2 lg:flex-row">
                             <div>
                                 <label class="text-lg flex flex-col" for="contraseña">Contraseña</label>
-                                <input class="bg-[#ffffff]" type="password" id="contraseña" placeholder="Ingrese su contraseña" required />
+                                <input class="bg-[#ffffff] w-50" type="password" id="contraseña"
+                                    placeholder="Ingrese su contraseña" required />
                             </div>
 
                             <div>
-                                <label class="text-lg flex flex-col" for="contraseñaconfirmacion">Confirmación de contraseña</label>
-                                <input class="bg-[#ffffff]" type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña" required />
+                                <label class="text-lg flex flex-col" for="contraseñaconfirmacion">Confirmación de
+                                    contraseña</label>
+                                <input class="bg-[#ffffff] w-50" type="password" id="contraseñaconfirmacion"
+                                    placeholder="Confirma tu contraseña" required />
                             </div>
                         </div>
-                        
-                        <button style="box-shadow: 5px 5px 15px -4px #000000" class="botonRegistro bg-[#64533e] border-none p-1 mb-3 mt-4 rounded-lg cursor-pointer text-[#ebcc90] w-25 flex self-center justify-around" type="submit">Registrarse</button>
+
+                        <button style="box-shadow: 5px 5px 15px -4px #000000"
+                            class="botonRegistro bg-[#64533e] border-none p-1 mb-3 mt-4 rounded-lg cursor-pointer text-[#ebcc90] w-25 flex self-center justify-around"
+                            type="submit">Registrarse</button>
                     </form>
                 </section>
             </main>
-
-            <footer class="fixed bottom-0 left-0 h-16 px w-full text-center text-sm text-[#8f846e]  ">
+            <footer class="w-full text-center text-sm text-[#8f846e] py-2">
                 <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
                 <h4>Política de privacidad • Términos y condiciones</h4>
             </footer>
         </section>
     </div>
+
 </body>
 
 </html>
-
