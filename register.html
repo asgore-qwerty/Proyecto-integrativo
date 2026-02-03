@@ -1,90 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-base h-screen w-screen">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro Bookify</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="style2.css" />
-    <link rel="shortcut icon" type="image/png" href="src/imgs/bookify_logo.png" />
+    <link rel="shortcut icon" type="image/png" href="src/imgs/Wireframe.png" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <header class="text-[#8b7355] w-full sticky">
-        <a href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
-        <nav>
-            <input class="cuadrobusqueda" type="text" placeholder="Buscar" />
-            <button class="botonbusqueda">🔍</button>
-            <ul>
-                <li><a href="register.html">Registrarse</a></li>
-                <li><a href="login.html">Ingresar</a></li>
+<body class="m-0 p-0 h-full overflow-x-hidden">
+    <button style="box-shadow: 5px 5px 15px -4px #000000" class="fixed bottom-10 left-4 z-50 w-14 h-14 flex items-center justify-center bg-[#4b3f2f] border-none p-1 rounded-xl cursor-pointer text-3xl"><a class="bg-transparent"
+            href="contact.html">💬</a></button>
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center gap-2">
+        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/Logo.png" width="130" alt="Bookify" /></a>
+        <nav class="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-around pr-10">
+            <div class="flex flex-nowrap justify-end">
+                <input class="bg-[#ffffff] rounded-md w-25 sm:w-40 md:w-40 lg:w-40 xl:w-40" type="text" placeholder="Buscar" />
+            </div>
+            <ul class="flex gap-2 pl-2">
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]" href="register.html">Registrarse</a></li>
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]" href="login.html">Ingresar</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <div class="asideMainFooter">
-        <aside>
-            <nav>
-                <ul>
-                    <h2>Categorías</h2>
-                    <li><a href="#">Artes</a></li>
-                    <li><a href="#">Ciencias</a></li>
-                    <li><a href="#">Salud</a></li>
-                    <li><a href="#">Sociales</a></li>
-                    <li><a href="#">Ingeniería</a></li>
-                    <h2><a href="#">Renovaciones</a></h2>
-                    <button class="botonreserva" href="#">Reservar</button>
+    <div class="h-full w-full flex m-0 gap-2 justify-around">
+        <aside class="flex p-4 w-auto text-justify">
+            <nav class="sticky top-4 h-fit">
+                <ul class="text-[#ffffff] flex flex-col gap-1">
+                    <h2 class="text-2xl">Categorías</h2>
+                    <li><a href="#">Realismo</a></li>
+                    <li><a href="#">Impresionismo</a></li>
+                    <li><a href="#">Expresionismo</a></li>
+                    <li><a href="#">Surrealismo</a></li>
+                    <li><a href="#">Hiperrealismo</a></li>
+                    <li><a href="#">Cubismo</a></li>
+                    <li><a href="#">Arte pop</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <section class="mainFooter">
-            <main class="contenidoCentradoMain">
-                <section class="recuadroFormularioR">
-                    <h1>Registro</h1> <br>
-                    <form class="formRegistro" action="index.html" method="post">
-                        <div class="fila">
-                            <div class="divDer">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" id="nombre" placeholder="Ingresa tu nombre" required />
-                            </div>
-
-                            <div class="divIzq">
-                                <label for="fechanaci">Fecha nacimiento</label>
-                                <input type="date" id="fechanaci" required />
-                            </div>
-                        </div>
-                        
-                        <div class="fila">
+        <section class="w-full h-full flex flex-col justify-around content-around">
+            <main class="contenidoCentradoMain flex-1 overflow-x-hidden flex flex-col min-w-0 text-[#cfb583] items-center">
+                <section style="box-shadow: 5px 5px 15px -4px #000000" class="recuadroFormulario h-auto mt-8 sm:mt-15 md:mt-15 lg:mt-15 xl:mt-15 flex w-auto p-3 items-center flex-col bg-[#8b7355] rounded-xl text-[#cfb583] border-none pb-px flex-wrap">
+                    <h1 class="text-4xl">Registro</h1> <br>
+                    <form class="formRegistro flex flex-col flex-wrap whitespace-normal justify-items-center w-auto"
+                        action="index.html" method="post">
+                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 flex flex-col gap-2 lg:flex-row">
                             <div>
-                                <label for="email">Correo</label>
-                                <input type="text" id="nombre" placeholder="Ingresa tu correo electrónico" required />
+                                <label class="text-lg flex flex-col" for="nombre">Nombre</label>
+                                <input class="rounded-md bg-[#ffffff] w-50" type="text" id="nombre" placeholder="Ingresa tu nombre"
+                                    required />
                             </div>
 
                             <div>
-                                <label for="telefono">Teléfono</label>
-                                <input type="number" id="telefono" placeholder="Ingresa tu teléfono/celular" required />
+                                <label class="text-lg flex flex-col" for="fechanaci">Fecha de nacimiento</label>
+                                <input class="rounded-md bg-[#ffffff] w-50" type="date" id="fechanaci" required />
                             </div>
                         </div>
 
-                        <div class="fila">
+                        <div class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2  flex flex-col gap-2 lg:flex-row">
                             <div>
-                                <label for="contraseña">Contraseña</label>
-                                <input type="password" id="contraseña" placeholder="Ingrese su contraseña" required />
+                                <label class="text-lg flex flex-col" for="email">Correo</label>
+                                <input class="rounded-md bg-[#ffffff] w-50" type="text" id="nombre"
+                                    placeholder="Ingresa tu correo electrónico" required />
                             </div>
 
                             <div>
-                                <label for="contraseñaconfirmacion">Confirmación</label>
-                                <input type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña" required />
+                                <label class="text-lg flex flex-col" for="telefono">Teléfono</label>
+                                <input class="rounded-md bg-[#ffffff] w-50" type="number" id="telefono"
+                                    placeholder="Ingresa tu teléfono/celular" required />
                             </div>
                         </div>
-                        
-                        <button class="botonRegistro" type="submit">Registrarse</button>
+
+                        <div
+                            class="fila sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2  flex flex-col gap-2 lg:flex-row">
+                            <div>
+                                <label class="text-lg flex flex-col" for="contraseña">Contraseña</label>
+                                <input class="rounded-md bg-[#ffffff] w-50" type="password" id="contraseña"
+                                    placeholder="Ingrese su contraseña" required />
+                            </div>
+
+                            <div>
+                                <label class="text-lg flex flex-col" for="contraseñaconfirmacion">Confirmación de
+                                    contraseña</label>
+                                <input class="rounded-md bg-[#ffffff] w-50" type="password" id="contraseñaconfirmacion"
+                                    placeholder="Confirma tu contraseña" required />
+                            </div>
+                        </div>
+
+                        <button style="box-shadow: 5px 5px 15px -4px #000000"
+                            class="botonRegistro bg-[#64533e] border-none p-1 mb-3 mt-4 rounded-lg cursor-pointer text-[#ebcc90] w-25 flex self-center justify-around"
+                            type="submit">Registrarse</button>
                     </form>
                 </section>
             </main>
-
-            <footer class="">
+            <footer class="w-full text-center text-sm text-[#8f846e] py-2">
                 <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
                 <h4>Política de privacidad • Términos y condiciones</h4>
             </footer>
