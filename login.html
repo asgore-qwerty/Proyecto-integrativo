@@ -1,24 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="min-h-screen w-screen text-base ">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="style2.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" type="image/png" href="src/imgs/Wireframe.png" />
 </head>
-<body>
-    <header>
 
-    </header>
-
-
-    <main>
-
-    </main>
-
-    
-    <footer>
-
-    </footer>
-    
+<body class="m-0 p-0 h-full overflow-x-hidden">
+    <button style="box-shadow: 5px 5px 15px -4px #000000" class="fixed bottom-10 left-4 z-50 w-14 h-14 flex items-center justify-center bg-[#4b3f2f] border-none p-1 rounded-xl cursor-pointer text-3xl"><a class="bg-transparent"
+            href="contact.html"><button style="box-shadow: 5px 5px 15px -4px #000000" class="fixed bottom-10 left-4 z-50 w-14 h-14 flex items-center justify-center bg-[#4b3f2f] border-none p-1 rounded-xl cursor-pointer text-3xl"><a class="bg-transparent"
+            href="contact.html">💬</a></button>
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center gap-2">
+        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/Logo.png" width="130" alt="Bookify" /></a>
+        <nav class="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-around pr-10">
+            <div class="flex flex-nowrap justify-end">
+                <input class="bg-[#ffffff] rounded-md w-25 sm:w-40 md:w-40 lg:w-40 xl:w-40" type="text" placeholder="Buscar" />
+            </div>
+            <ul class="flex gap-2 pl-2">
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]" href="register.html">Registrarse</a></li>
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]" href="login.html">Ingresar</a>
+                </li>
+            </ul>
+        </nav>
+    </header></a></button>
+    <div class="h-auto w-full flex min-h-screen m-0 gap-2">
+        <aside class="flex p-4 w-auto text-justify">
+            <nav class="sticky top-4 h-fit">
+                <ul class="text-[#ffffff] flex flex-col gap-1">
+                    <h2 class="text-2xl">Categorías</h2>
+                    <li><a href="#">Realismo</a></li>
+                    <li><a href="#">Impresionismo</a></li>
+                    <li><a href="#">Expresionismo</a></li>
+                    <li><a href="#">Surrealismo</a></li>
+                    <li><a href="#">Hiperrealismo</a></li>
+                    <li><a href="#">Cubismo</a></li>
+                    <li><a href="#">Arte pop</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="gap-6 w-full h-full flex flex-col justify-around content-around">
+            <main class="h-full w-full gap-15 p-2 flex flex-col min-w-0 text-[#cfb583] items-center">
+                <div style="box-shadow: 5px 5px 15px -4px #000000" class="lg:w-74 ml-2 mt-2 h-full flex w-auto p-4 items-center flex-col bg-[#8b7355] rounded-xl text-[#cfb583] border-none pb-px flex-wrap">
+                    <h1 class="text-4xl">Iniciar sesión</h1>
+                    <br>
+                    <form class="flex flex-col flex-wrap whitespace-normal justify-items-center gap-1" action="index.html" method="POST">
+                        <label for="email">Usuario:</label>
+                        
+                        <input class="bg-[#ffffff]" type="email" id="email" class="email" placeholder="Ingrese su usuario" required />
+                        <br />
+                       
+                        <label for="password">Contraseña:</label>
+                        
+                        <input class="bg-[#ffffff]" type="password" id="password" class="password" placeholder="Ingrese su contraseña"
+                            required />
+                        
+                        <div class="recuerdame">
+                            <input type="checkbox" id="rememberMe" />
+                            <label id="recordarC" for="rememberMe">Recuérdame</label>
+                        </div>
+                        
+                        <br>
+                        <a href="register.html">Olvidé mi contraseña</a>
+                      
+                        <br />
+                        <button style="box-shadow: 5px 5px 15px -4px #000000" class="botonRegistro bg-[#64533e] border-none p-1 rounded-lg cursor-pointer text-[#ebcc90] w-21 flex justify-around self-center " type="submit">Ingresar</button>
+                        <br />
+                    </form>
+                </div>
+            </main>
+            <br />
+            <footer class="fixed bottom-0 left-0 h-16 px w-full text-center text-sm text-[#8f846e]  ">
+                <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
+                <h4>Política de privacidad • Términos y condiciones</h4>
+            </footer>
+        </section>
+    </div>
 </body>
+
 </html>

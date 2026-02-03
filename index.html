@@ -1,23 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="text-base w-screen">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookify</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art4</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" type="image/png" href="src/imgs/Wireframe.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <header>
-        <h1>Bookify</h1>
-            
+
+<body class="m-0 p-0 h-full overflow-x-hidden">
+    <button style="box-shadow: 5px 5px 15px -4px #000000"
+        class="fixed bottom-10 left-4 z-50 w-14 h-14 flex items-center justify-center bg-[#4b3f2f] border-none p-1 rounded-xl cursor-pointer text-3xl"><a
+            class="bg-transparent" href="contact.html">💬</a></button>
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center gap-2">
+        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/Logo.png" width="130"
+                alt="Art4" /></a>
+        <nav class="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-around pr-10">
+            <div class="flex flex-nowrap justify-end">
+                <input class="bg-[#ffffff] rounded-md w-25 sm:w-40 md:w-40 lg:w-40 xl:w-40" type="text"
+                    placeholder="Buscar" />
+            </div>
+            <ul class="flex gap-2 pl-2">
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]"
+                        href="register.html">Registrarse</a></li>
+                <li class="inline"><a class="whitespace-normal min-w-0 text-[#775935]" href="login.html">Ingresar</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+    <div class="h-full w-full flex flex-col md:flex-row md:flex-nowrap m-0 gap-2 md:items-start">
+        <aside class="xl:w-40 flex p-4 w-auto text-justify md:flex-shrink-0 md:w-38 lg:w-40 md:sticky md:top-16 md:h-screen md:overflow-auto bg-gradient-to-br from-[#606060] to-[#000000]">
+            <nav class="h-fit">
+                <ul class="text-[#ffffff] flex flex-col gap-1">
+                    <h2 class="text-2xl">Categorías</h2>
+                    <li><a href="#">Realismo</a></li>
+                    <li><a href="#">Impresionismo</a></li>
+                    <li><a href="#">Expresionismo</a></li>
+                    <li><a href="#">Surrealismo</a></li>
+                    <li><a href="#">Hiperrealismo</a></li>
+                    <li><a href="#">Cubismo</a></li>
+                    <li><a href="#">Arte pop</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main>
+        <div class="flex-1 min-w-0 h-full flex flex-col content-around">
+            <main>
+                <section class="flex flex-row content-between items-center justify-between p-4">
+                    <h1 class="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#cfb583]">Catálogo de Libros</h1>
+                    <section class="flex gap-2">
+                        <select class="h-8 sm:h-9 md:h-10 w-20 sm:w-24 md:w-32 lg:w-40 text-xs sm:text-sm md:text-base text-[#cfb583] bg-[#8b7355] rounded-[0.6rem] border-none cursor-pointer" style="box-shadow: 5px 5px 15px -4px #000000">
+                            <option label="Filtro" disabled selected></option>
+                            <option value="autor">Autor</option>
+                            <option value="titulo">Titulo</option>
+                            <option value="año">Año</option>
+                            <option value="estilo">Estilo</option>
+                        </select>
+                        <select class="h-8 sm:h-9 md:h-10 w-28 sm:w-32 md:w-40 lg:w-48 text-xs sm:text-sm md:text-base text-[#cfb583] bg-[#8b7355] rounded-[0.6rem] border-none cursor-pointer" style="box-shadow: 5px 5px 15px -4px #000000">
+                            <option label="Ordenar por" disabled selected></option>
+                            <option value="ascendente">A-Z</option>
+                            <option value="descendente">Z-A</option>
+                            <option value="masreciente">Más reciente</option>
+                            <option value="masantiguo">Más antiguo primero</option>
+                            <option value="populares">Los más populares</option>
+                        </select>
+                    </section>
+                </section>
+                <section
+                    class="flex flex-wrap justify-center content-stretch gap-4">
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+                    transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105 transition-transform 
+                    duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/1. Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg"
+                                alt="El nacimiento de Venus"></a>
+                        <div class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5
+                        text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75
+                        transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">El nacimiento de Venus</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Sandro Botticelli</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1485</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Renacimiento</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
 
-    </main>
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+        transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+        transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/2. Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg"
+                                alt="La última cena"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">La última cena</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Leonardo da Vinci</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1495</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Renacimiento</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/3. michelangelo-creation-of-adam-cropped-1-cke.webp"
+                                alt="La Creación de Adán"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">La Creación de Adán</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Miguel Ángel</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1512</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Renacimiento</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
 
-    <footer>
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/4. la-escuela-de-atenas-de-rafael-sanzio-og.webp"
+                                alt="La escuela de Atenas"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">La escuela de Atenas</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Rafael Sanzio</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1511</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Renacimiento</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
 
-    </footer>
-    
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/5. final-el-jardin-de-las-delicias-de-el-bosco-cke.webp"
+                                alt="El jardín de las delicias"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">El jardín de las delicias</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>El Bosco</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1500</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Flamenco</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/6. Meisje_met_de_parel.jpg"
+                                alt="La joven de la perla"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">La joven de la perla</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Johannes Vermeer</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1665</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Barroco</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/9. La_Liberté_guidant_le_peuple_-_Eugène_Delacroix_-_Musée_du_Louvre_Peintures_RF.webp"
+                                alt="La libertad guiando al pueblo"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">La libertad guiando al pueblo</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Eugène Delacroix</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1830</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Romanticismo</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img class="w-full h-full object-cover rounded-lg" src="src/imgs/portadas_libros/10. Claude_Monet,_Impression,_soleil_levant,_1872.jpg"
+                                alt="Impresión, sol naciente"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">Impresión, sol naciente</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Claude Monet</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1872</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Impresionismo</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    
+
+                    
+
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#"><img class="inset-0 w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44" src="src/imgs/portadas_libros/13. el beso.webp"
+                                width="180" alt="El beso"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">El beso</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Gustav Klimt</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1908</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Simbolismo / Art Nouveau</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#"><img class="inset-0 w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44" src="src/imgs/portadas_libros/14. la persistencia de la memoria.jpg"
+                                width="180" alt="La persistencia de la memoria"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">La persistencia de la memoria</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Salvador Dalí</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1931</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Surrealismo</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#"><img class="inset-0 w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44" src="src/imgs/portadas_libros/15. the-two-fridas.jpg"
+                                width="180" alt="Las dos Fridas"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">Las dos Fridas</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Frida Kahlo</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1939</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Surrealismo / Naíf</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
+transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
+                        <a href="#"><img class="inset-0 w-28 sm:w-32 md:w-36 lg:w-40 xl:w-44" src="src/imgs/portadas_libros/17. american gothic.jpg"
+                                width="180" alt="American Gothic"></a>
+                        <div
+                            class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 absolute inset-0 flex flex-col justify-center p-3 sm:p-4 md:p-5 text-center opacity-0 hover:opacity-90 bg-black bg-opacity-75 transition-opacity duration-300 rounded-xl">
+                            <h3 class="text-sm md:text-base lg:text-lg">American Gothic</h3>
+                            <table class="w-full text-xs md:text-sm flex-col justify-center text-left mx-auto mt-1 md:mt-2">
+                                <tr>
+                                    <th>Autor</th>
+                                    <td>Grant Wood</td>
+                                </tr>
+                                <tr>
+                                    <th>Año</th>
+                                    <td>1930</td>
+                                </tr>
+                                <tr>
+                                    <th>Estilo</th>
+                                    <td>Realismo Americano</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+
+                    
+
+                    
+                    <br>
+                    <br>
+                </section>
+            </main>
+
+            <footer class="fixed bottom-0 left-0 w-full h-12 flex flex-col items-center justify-center text-center text-xs sm:text-sm text-[#8f846e] bg-gradient-to-t from-[#373737] to-transparent">
+                <p class="m-0" style="text-shadow: 4px 4px 4px #0a0a0a">© 2025 Bookify. Todos los derechos reservados.</p>
+                <p class="m-0 text-xs" style="text-shadow: 4px 4px 4px #0a0a0a">Política de privacidad • Términos y condiciones</p>
+            </footer>
+        </div>
+    </div>
 </body>
+
 </html>
