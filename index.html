@@ -30,9 +30,9 @@
             </ul>
         </nav>
     </header>
-    <div class="h-full w-full flex flex-col md:flex-row m-0 gap-2 md:justify-around">
-        <aside class="flex p-4 w-auto text-justify">
-            <nav class="sticky top-4 h-fit">
+    <div class="h-full w-full flex flex-col md:flex-row md:flex-nowrap m-0 gap-2 md:items-start">
+        <aside class="xl:w-40 flex p-4 w-auto text-justify md:flex-shrink-0 md:w-38 lg:w-40 md:sticky md:top-16 md:h-screen md:overflow-auto bg-gradient-to-br from-[#606060] to-[#000000]">
+            <nav class="h-fit">
                 <ul class="text-[#ffffff] flex flex-col gap-1">
                     <h2 class="text-2xl">Categorías</h2>
                     <li><a href="#">Realismo</a></li>
@@ -46,7 +46,7 @@
             </nav>
         </aside>
 
-        <div class="w-full h-full flex flex-col content-around">
+        <div class="flex-1 min-w-0 h-full flex flex-col content-around">
             <main>
                 <section class="flex flex-row content-between items-center justify-between p-4">
                     <h1 class="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#cfb583]">Catálogo de Libros</h1>
@@ -349,7 +349,7 @@ transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center"
                             </table>
                         </div>
                     </article>
-                    
+
                     <article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
 transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105
 transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center">
@@ -383,9 +383,9 @@ transition-transform duration-300 hover:bg-[#9c8463] flex flex-col items-center"
                 </section>
             </main>
 
-            <footer class="w-full text-center text-sm text-[#8f846e] py-2">
-                <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
-                <h4>Política de privacidad • Términos y condiciones</h4>
+            <footer class="fixed bottom-0 left-0 w-full h-12 flex flex-col items-center justify-center text-center text-xs sm:text-sm text-[#8f846e] bg-gradient-to-t from-[#373737] to-transparent">
+                <p class="m-0" style="text-shadow: 4px 4px 4px #0a0a0a">© 2025 Bookify. Todos los derechos reservados.</p>
+                <p class="m-0 text-xs" style="text-shadow: 4px 4px 4px #0a0a0a">Política de privacidad • Términos y condiciones</p>
             </footer>
         </div>
     </div>
