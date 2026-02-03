@@ -24,7 +24,7 @@ header {
     position: sticky; /*Para que el header siempre esté visible aún cuando se hace scroll*/
     top: 0;
     z-index: 1000; /*Sirve para sobreponer el header con respecto a las demás partes de la página*/
-    background-color: #c9a66b;
+    background-color: #e7ddcd;
     display: flex; /*Vuelve los contenedores flexibles, que ayuda a controlar el posicionamiento de los hijos del contenedor donde se aplica*/
     justify-content: space-between;
     align-items: center;

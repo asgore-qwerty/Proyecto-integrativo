@@ -1,11 +1,7 @@
 * {
     box-sizing: border-box; /*Hace que el padding y el border queden incluídos dentro del width (para calcular el tamaño de los elementos)*/
-    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
 }
-
-
 
 body {
     background: linear-gradient(90deg, #373737, #473524, #82562f, #d8b08b);
