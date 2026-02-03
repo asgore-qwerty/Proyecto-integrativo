@@ -1,78 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="image/png" href="src/imgs/bookify_logo.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art4 - Contáctenos</title>
+    <link rel="shortcut icon" href="src/imgs/logo.jpeg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <header>
-        <a href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
-        <nav>
-            <input class="cuadrobusqueda" type="text" placeholder="Buscar" />
-            <button class="botonbusqueda">🔍</button>
-            <ul>
-                <li><a href="register.html">Registrarse</a></li>
-                <li><a href="login.html">Ingresar</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="asideMainFooter">
-        <aside>
-            <nav>
-                <ul>
-                    <h2>Categorías</h2>
-                    <li><a href="#">Artes</a></li>
-                    <li><a href="#">Ciencias</a></li>
-                    <li><a href="#">Salud</a></li>
-                    <li><a href="#">Sociales</a></li>
-                    <li><a href="#">Ingeniería</a></li>
-                    <h2><a href="#">Renovaciones</a></h2>
-                    <button class="botonreserva" href="#">Reservar</button>
-                </ul>
-            </nav>
-        </aside>
-        <section class="mainFooter">
-            <main class="contenidoCentradoMain">
-                <div class="recuadroFormulario">
-                    <h1>Iniciar sesión</h1>
-                    <br>
-                    <form action="index.html" method="POST">
-                        <label for="email">Usuario:</label>
-                        
-                        <input type="email" id="email" class="email" placeholder="Ingrese su usuario" required />
-                        <br />
-                       
-                        <label for="password">Contraseña:</label>
-                        
-                        <input type="password" id="password" class="password" placeholder="Ingrese su contraseña"
-                            required />
-                        
-                        <div class="recuerdame">
-                            <input type="checkbox" id="rememberMe" />
-                            <label id="recordarC" for="rememberMe">Recuérdame</label>
-                        </div>
-                        
-                        <br>
-                        <a href="register.html">Olvidé mi contraseña</a>
-                      
-                        <br />
-                        <button class="botonIngresar" type="submit">Ingresar</button>
-                        <br />
-                    </form>
-                </div>
-            </main>
-            <br />
-            <footer>
-                <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
-                <h4>Política de privacidad • Términos y condiciones</h4>
-            </footer>
-        </section>
-    </div>
-</body>
+<body class="min-h-screen text-[#cfb583] bg-gradient-to-r from-[#373737] via-[#473524] via-[#82562f] to-[#d8b08b]">
 
-</html>
+<!-- HEADER -->
+<header class="bg-[#c9a66b] h-[60px] flex items-center px-4 border-b border-[#8c734b]">
+    <div class="flex items-center w-full gap-4">
+
+        <!-- Logo -->
+        <a href="index.html">
+            <img src="src/imgs/Art4.jpeg" alt="Art4" class="h-10">
+        </a>
+
+        <!-- Buscador -->
+        <input
+            type="search"
+            placeholder="buscar"
+            class="ml-auto w-[150px] md:w-[280px] px-10 py-2 rounded border text-gray-600 bg-white"
+        >
+
+        <!-- Links -->
+        <div class="flex gap-4 text-[#775935]">
+            <a href="register.html">Registrarse</a>
+            <a href="login.html">Ingresar</a>
+        </div>
+    </div>
+</header>
