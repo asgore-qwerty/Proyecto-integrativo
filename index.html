@@ -30,9 +30,9 @@
             </ul>
         </nav>
     </header>
-    <div class="h-full w-full flex flex-col md:flex-row m-0 gap-2 md:justify-around">
-        <aside class="flex p-4 w-auto text-justify">
-            <nav class="sticky top-4 h-fit">
+    <div class="h-full w-full flex flex-col md:flex-row md:flex-nowrap m-0 gap-2 md:items-start">
+        <aside class="xl:w-40 flex p-4 w-auto text-justify md:flex-shrink-0 md:w-38 lg:w-40 md:sticky md:top-16 md:h-screen md:overflow-auto bg-gradient-to-br from-[#606060] to-[#000000]">
+            <nav class="h-fit">
                 <ul class="text-[#ffffff] flex flex-col gap-1">
                     <h2 class="text-2xl">Categorías</h2>
                     <li><a href="#">Realismo</a></li>
@@ -46,7 +46,7 @@
             </nav>
         </aside>
 
-        <div class="w-full h-full flex flex-col content-around">
+        <div class="flex-1 min-w-0 h-full flex flex-col content-around">
             <main>
                 <section class="flex flex-row content-between items-center justify-between p-4">
                     <h1 class="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#cfb583]">Catálogo de Libros</h1>
