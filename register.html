@@ -5,11 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro Bookify</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="shortcut icon" type="image/png" href="src/imgs/bookify_logo.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
-    <header>
+    <header class="text-[#8b7355] w-full sticky">
         <a href="index.html"><img src="src/imgs/bookify.png" width="200" alt="Bookify" /></a>
         <nav>
             <input class="cuadrobusqueda" type="text" placeholder="Buscar" />
@@ -37,38 +39,52 @@
         </aside>
 
         <section class="mainFooter">
-            <main>
-                <section class="registro">
-                    <h1>Registro</h1>
-                    <form action="index.html" method="post">
-                        <label for="nombre">Nombre</label><br />
-                        <input type="text" id="nombre" placeholder="Ingresa tu nombre" required /><br /><br />
+            <main class="contenidoCentradoMain">
+                <section class="recuadroFormularioR">
+                    <h1>Registro</h1> <br>
+                    <form class="formRegistro" action="index.html" method="post">
+                        <div class="fila">
+                            <div class="divDer">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" placeholder="Ingresa tu nombre" required />
+                            </div>
 
-                        <label for="fechanaci">Fecha de nacimiento</label><br />
-                        <input type="date" id="fechanaci" required /><br /><br />
+                            <div class="divIzq">
+                                <label for="fechanaci">Fecha nacimiento</label>
+                                <input type="date" id="fechanaci" required />
+                            </div>
+                        </div>
+                        
+                        <div class="fila">
+                            <div>
+                                <label for="email">Correo</label>
+                                <input type="text" id="nombre" placeholder="Ingresa tu correo electrónico" required />
+                            </div>
 
-                        <label for="email">Correo</label><br />
-                        <input type="text" id="nombre" placeholder="Ingresa tu correo electrónico"
-                            required /><br /><br />
+                            <div>
+                                <label for="telefono">Teléfono</label>
+                                <input type="number" id="telefono" placeholder="Ingresa tu teléfono/celular" required />
+                            </div>
+                        </div>
 
-                        <label for="telefono">Teléfono</label><br />
-                        <input type="number" id="telefono" placeholder="Ingresa tu teléfono/celular"
-                            required /><br /><br />
+                        <div class="fila">
+                            <div>
+                                <label for="contraseña">Contraseña</label>
+                                <input type="password" id="contraseña" placeholder="Ingrese su contraseña" required />
+                            </div>
 
-                        <label for="contraseña">Contraseña</label><br />
-                        <input type="password" id="contraseña" placeholder="Ingresa tu contraseña"
-                            required /><br /><br />
-
-                        <label for="contraseñaconfirmacion">Confirmación de contraseña</label><br />
-                        <input type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña"
-                            required /><br /><br />
-
-                        <button type="submit">Registrarse</button><br /><br />
+                            <div>
+                                <label for="contraseñaconfirmacion">Confirmación</label>
+                                <input type="password" id="contraseñaconfirmacion" placeholder="Confirma tu contraseña" required />
+                            </div>
+                        </div>
+                        
+                        <button class="botonRegistro" type="submit">Registrarse</button>
                     </form>
                 </section>
             </main>
 
-            <footer>
+            <footer class="">
                 <h3>© 2025 Bookify. Todos los derechos reservados.</h3>
                 <h4>Política de privacidad • Términos y condiciones</h4>
             </footer>
