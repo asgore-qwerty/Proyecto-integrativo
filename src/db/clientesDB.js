@@ -70,3 +70,11 @@ console.log("Número de clientes activos:", clientesActivos.length); // 2
 // 3. Calcular el total de ventas de todos los clientes
 const ventasTotales = clientesDB.reduce((total, cliente) => total + cliente.comprasTotales, 0);
 console.log("Ventas totales: $" + ventasTotales); // $3691.25
+
+export function obtenerUsuario(){
+    return clientesDB;
+}
+
+export function agregarUsuario(usuario){
+    clientesDB.push(usuario);
+}
