@@ -6,7 +6,7 @@ export function register(){
     const main = document.querySelector("main");
     const aRegister = document.getElementById("aRegister");
     
-    main.classList = "contenidoCentradoMain flex-1 overflow-x-hidden flex flex-col min-w-0 text-[#cfb583] items-center";
+    main.classList = "flex-1 overflow-x-hidden flex flex-col min-w-0 text-[#cfb583] items-center";
 
     aRegister.addEventListener("click", (e) => {
         e.preventDefault();
@@ -57,6 +57,13 @@ export function register(){
         seccionRegistro.appendChild(formularioRegistro);
         
         main.appendChild(seccionRegistro);
+
+        
+        const inputCorreo = divCorreoTelefono.querySelector('input[type="email"]');
+        inputCorreo.addEventListener("blur", (e) => {
+            validarUsuario(e.target);
+        });
+
     });
 
 }

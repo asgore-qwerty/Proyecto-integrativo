@@ -19,6 +19,8 @@ export function crearCampoForm(etiquetaTexto, tipo, idNombre){
 
     const span = document.createElement('span');
     span.classList = "alerta"
+    span.style.display = "block";
+    span.style.fontSize = "18px";
 
     contenedorCampo.appendChild(label);
     contenedorCampo.appendChild(input);
@@ -38,29 +40,37 @@ export function crearBoton(nombre, tipo){
     return boton;
 }
 
-export function validarUsuario(inputUserName){
-    const contenedor = inputUserName.parentElement;
-    const spanError = contenedor.querySelector('span');
-    const usuario = inputUserName.value.trim().toLowerCase();
-    const usuarios = obtenerUsuario();
+
+export function validarUsuario(inputCorreo){
+    const contenedor = inputCorreo.closest('div');
+    const spanError = contenedor.querySelector('.alerta');
+    const email = inputCorreo.value.trim().toLowerCase();
+    const usuarios = obtenerUsuario() || [];
 
     const existe = usuarios.some(u => 
-        u.nombreUsuario.toLocaleLowerCase() === usuario
+        u && u.email && u.email.toLowerCase() === email
     )
 
+    if (!email) {
+    spanError.textContent = "El correo es obligatorio";
+    spanError.style.color = "#556D8B";
+    inputCorreo.style.borderColor = "#556D8B";
+    return false;
+    }
+
     if(existe){
-        spanError.textContent = "Usuario ya existe";
-        spanError.style.color = "red";
-        inputUserName.style.borderColor = "red";
+        spanError.textContent = "Este correo ya está registrado";
+        spanError.style.color = "#556D8B";
+        inputCorreo.style.borderColor = "#556D8B";
 
         return false;
     }
 
-    spanError.textContent = "Usuario disponible";
-    spanError.style.color = "green";
-    inputUserName.style.borderColor = "green";
+    spanError.textContent = "Este correo está disponible";
+    spanError.style.color = "#6D8B55";
+    inputCorreo.style.borderColor = "#6D8B55";
 
-    console.log('valor: ', inputUserName.value);
+    console.log('valor: ', inputCorreo.value);
     console.log('usuarios: ', obtenerUsuario());
     return true;
 }
