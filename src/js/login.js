@@ -44,20 +44,11 @@ export function login() {
         seccionLogin.prepend(h1);
 
 
-        divNombre.appendChild(crearCampoForm("Correo", "email", "email"));
+        formularioLogin.appendChild(crearCampoForm("Correo", "email", "email"));
 
-        divContraseñaConfirmacion.appendChild(crearCampoForm("Contraseña", "password", "contraseña")); 
+        formularioLogin.appendChild(crearCampoForm("Contraseña", "password", "contraseña")); 
 
         
-
-        formularioLogin.appendChild(divRegistro)
-        
-        formularioLogin.appendChild(divNombre);
-        formularioLogin.appendChild(divContraseñaConfirmacion);
-        
-
-
-
         const anchorRegister = document.createElement("a");
         anchorRegister.href="";
         anchorRegister.textContent= "olvidé mi contraseña";
@@ -67,7 +58,6 @@ export function login() {
         anchorRegister.addEventListener("click", (e) =>{
             e.preventDefault();
             main.innerHTML="";
-            console.log("hola1");
             
             register();
             document.getElementById("aRegister").click();
@@ -77,6 +67,41 @@ export function login() {
 
 
         const botonIngresar = crearBoton("Ingresar", "submit"); formularioLogin.appendChild(botonIngresar);
+
+        formularioLogin.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            
+            const emailInput = formularioLogin.querySelector('input[type="email"]');
+            const passwordInput = formularioLogin.querySelector('input[type="password"]');
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            const listaUsuarios = obtenerUsuario();
+
+            const usuarioEncontrado = listaUsuarios.find(user => 
+                user.email === email && user.contraseña === password);
+
+
+                if (usuarioEncontrado) {
+                console.log("Acceso correcto:", usuarioEncontrado.nombre);
+
+                main.innerHTML = "";
+                const saludo = document.createElement("h2");
+                saludo.classList = "text-3xl mt-10";
+                saludo.textContent = `¡Bienvenido de nuevo, ${usuarioEncontrado.nombre}!`;
+                main.appendChild(saludo);
+                               
+            } else {
+                
+                alert("El correo o la contraseña no coinciden con nuestros registros.");
+            }
+
+        
+
+            
+        });
 
 
 
