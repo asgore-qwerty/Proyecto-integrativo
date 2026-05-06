@@ -2,58 +2,34 @@ const clientesDB = [
   {
     id: 1,
     nombre: "Laura Martínez",
+    fechaNacimiento: "2023-05-12",
     email: "laura.martinez@email.com",
-    contraseña: "abc123",
-    telefono: "555-0192",
-    direccion: {
-      calle: "Avenida Principal 123",
-      ciudad: "Metrópolis",
-      codigoPostal: "10001"
-    },
-    fechaRegistro: "2023-05-12",
-    comprasTotales: 1250.50
+    telefono: "5550192",
+    contraseña: "abc123"
   },
   {
     id: 2,
     nombre: "Carlos Rivera",
+    fechaNacimiento: "2022-11-03",
     email: "carlos.r@email.com",
-    contraseña: "def456",
-    telefono: "555-3847",
-    direccion: {
-      calle: "Calle del Sol 45",
-      ciudad: "Villa Esperanza",
-      codigoPostal: "20020"
-    },
-    fechaRegistro: "2022-11-03",
-    comprasTotales: 340.00
+    telefono: "5553847",
+    contraseña: "def456"
   },
   {
     id: 3,
     nombre: "Sofía Gómez",
+    fechaNacimiento: "2024-01-20",
     email: "sgomez.tech@email.com",
-    contraseña: "ghi789",
-    telefono: "555-9921",
-    direccion: {
-      calle: "Bulevar Central 88",
-      ciudad: "Nueva Ciudad",
-      codigoPostal: "30045"
-    },
-    fechaRegistro: "2024-01-20",
-    comprasTotales: 2100.75
+    telefono: "5559921",
+    contraseña: "ghi789"
   },
   {
     id: 4,
     nombre: "Javier López",
+    fechaNacimiento: "2024-04-10",
     email: "jlopez99@email.com",
-    contraseña: "jkl012",
-    telefono: "555-7744",
-    direccion: {
-      calle: "Pasaje Industrial 9",
-      ciudad: "Metrópolis",
-      codigoPostal: "10002"
-    },
-    fechaRegistro: "2024-04-10",
-    comprasTotales: 0.00
+    telefono: "5557744",
+    contraseña: "jkl012"
   }
 ];
 
@@ -71,8 +47,8 @@ console.log("Número de clientes activos:", clientesActivos.length); // 2
 const ventasTotales = clientesDB.reduce((total, cliente) => total + cliente.comprasTotales, 0);
 console.log("Ventas totales: $" + ventasTotales); // $3691.25 */
 
-export function obtenerUsuario(){
-    return clientesDB;
+export function obtenerUsuario() {
+  return clientesDB;
 }
 
 export function agregarUsuario(usuario){
