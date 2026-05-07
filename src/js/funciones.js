@@ -18,7 +18,7 @@ export function crearCampoForm(etiquetaTexto, tipo, idNombre){
     input.classList = "rounded-md bg-[#ffffff] w-50";
 
     const span = document.createElement('span');
-    span.classList = "alerta"
+    span.classList = "alerta whitespace-pre-line text[#556D8B]"
     span.style.display = "block";
     span.style.fontSize = "18px";
 
@@ -52,12 +52,11 @@ export function validarUsuario(inputCorreo){
         u && u.email && u.email.toLowerCase() === email
     )
 
-    /* if (!rejex.test(email)) {
+    if (!rejex.test(email)) {
         spanError.textContent = "Formato correcto: ejemplo@dominio.com";
-        spanError.classList = "whitespace-pre-line text[#556D8B]";
         inputCorreo.style.borderColor = "#556D8B";
         return false;
-    } */
+    }
 
     if (!email) {
     spanError.textContent = "El correo es obligatorio";
