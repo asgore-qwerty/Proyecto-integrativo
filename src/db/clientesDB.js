@@ -1,55 +1,67 @@
 const clientesDB = [
   {
     id: 1,
-    nombre: "Laura Martínez",
-    email: "laura.martinez@email.com",
-    contraseña: "555-0192",
-    direccion: {
-      calle: "Avenida Principal 123",
-      ciudad: "Metrópolis",
-      codigoPostal: "10001"
-    },
-    fechaRegistro: "2023-05-12",
-    comprasTotales: 1250.50
+    nombre: "Carolina Ortiz",
+    fechaNacimiento: "1990-05-12",
+    email: "carolina.ortiz@email.com",
+    telefono: "5551234",
+    contrasena: "1234",
   },
   {
     id: 2,
-    nombre: "Carlos Rivera",
-    email: "carlos.r@email.com",
-    contraseña: "555-3847",
-    direccion: {
-      calle: "Calle del Sol 45",
-      ciudad: "Villa Esperanza",
-      codigoPostal: "20020"
-    },
-    fechaRegistro: "2022-11-03",
-    comprasTotales: 340.00
+    nombre: "Mauricio Castaño",
+    fechaNacimiento: "1985-08-20",
+    email: "mauricio.castaño@email.com",
+    telefono: "5555678",
+    contrasena: "1234",
   },
   {
     id: 3,
-    nombre: "Sofía Gómez",
-    email: "sgomez.tech@email.com",
-    contraseña: "555-9921",
-    direccion: {
-      calle: "Bulevar Central 88",
-      ciudad: "Nueva Ciudad",
-      codigoPostal: "30045"
-    },
-    fechaRegistro: "2024-01-20",
-    comprasTotales: 2100.75
+    nombre: "felipe Gaviria",
+    fechaNacimiento: "1995-12-10",
+    email: "felipe.gaviria@email.com",
+    telefono: "5559012",
+    contrasena: "1234",
   },
   {
     id: 4,
+    nombre: "jonatan Gil",
+    fechaNacimiento: "2000-07-25",
+    email: "jonatan.gil@email.com",
+    telefono: "5553456",
+    contrasena: "1234",
+  },
+  {
+    id: 5,
+    nombre: "Laura Martínez",
+    fechaNacimiento: "2023-05-12",
+    email: "laura.martinez@email.com",
+    telefono: "5550192",
+    contraseña: "abc123"
+  },
+  {
+    id: 6,
+    nombre: "Carlos Rivera",
+    fechaNacimiento: "2022-11-03",
+    email: "carlos.r@email.com",
+    telefono: "5553847",
+    contraseña: "def456"
+  },
+  {
+    id: 7,
+    nombre: "Sofía Gómez",
+    fechaNacimiento: "2024-01-20",
+    email: "sgomez.tech@email.com",
+    telefono: "5559921",
+    contraseña: "ghi789"
+  },
+  {
+    id: 8,
     nombre: "Javier López",
+    fechaNacimiento: "2024-04-10",
     email: "jlopez99@email.com",
-    contraseña: "555-7744",
-    direccion: {
-      calle: "Pasaje Industrial 9",
-      ciudad: "Metrópolis",
-      codigoPostal: "10002"
-    },
-    fechaRegistro: "2024-04-10",
-    comprasTotales: 0.00
+    telefono: "5557744",
+    contraseña: "jkl012"
   }
 ];
 
