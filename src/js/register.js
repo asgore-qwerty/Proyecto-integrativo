@@ -1,5 +1,5 @@
 import { crearCampoForm, crearBoton, validarUsuario, validarCampos } from "./funciones.js";
-import { obtenerUsuario, agregarUsuario } from "../db/clientesDB.js";
+import { obtenerUsuario, agregarUsuario } from "../db/usuariosDB.js";
 
 export function register() {
 
