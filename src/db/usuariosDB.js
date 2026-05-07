@@ -1,4 +1,4 @@
-const clientesDB = [
+const usuariosDB = [
   {
     id: 1,
     nombre: "Carolina Ortiz",
