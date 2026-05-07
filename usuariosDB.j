@@ -1,4 +1,4 @@
-const clientesDB = [
+const usuariosDB = [
   {
     id: 1,
     nombre: "Carolina Ortiz",
@@ -68,9 +68,9 @@ const clientesDB = [
 
 
 export function obtenerUsuario(){
-    return clientesDB;
+    return usuariosDB;
 };
 
 export function agregarUsuario(usuario){
-    clientesDB.push(usuario);
+    usuariosDB.push(usuario);
 };
