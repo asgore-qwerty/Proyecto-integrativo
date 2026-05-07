@@ -1,4 +1,4 @@
-import { obtenerUsuario, agregarUsuario } from "../db/usuariosDB.js"; 
+import { obtenerUsuario, agregarUsuario } from "../db/clientesDB.js"; 
 
 export function crearCampoForm(etiquetaTexto, tipo, idNombre){
     const contenedorCampo = document.createElement('div');
