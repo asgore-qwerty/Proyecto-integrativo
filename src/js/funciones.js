@@ -52,12 +52,12 @@ export function validarUsuario(inputCorreo){
         u && u.email && u.email.toLowerCase() === email
     )
 
-    if (!rejex.test(email)) {
+    /* if (!rejex.test(email)) {
         spanError.textContent = "Formato correcto: ejemplo@dominio.com";
         spanError.classList = "whitespace-pre-line text[#556D8B]";
         inputCorreo.style.borderColor = "#556D8B";
         return false;
-    }
+    } */
 
     if (!email) {
     spanError.textContent = "El correo es obligatorio";
