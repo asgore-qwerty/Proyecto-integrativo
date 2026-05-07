@@ -5,11 +5,6 @@ const main = document.querySelector("main");
 function renderizarObras(arrayObras) {
     const articles = document.getElementById("seccionCatalogoObras");
 
-    if (arrayObras.length === 0) {
-        articles.innerHTML = '<div class="no-games">No hay coincidencia de obras</div>';
-        return;
-    }
-
 const obrasHtml = arrayObras.map(obra => `<article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
                     transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105 transition-transform 
                     duration-300 hover:bg-[#9c8463] flex flex-col items-center">
