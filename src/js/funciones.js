@@ -1,4 +1,4 @@
-import { obtenerUsuario, agregarUsuario } from "../db/clientesDB.js"; 
+import { obtenerUsuario, agregarUsuario } from "../db/usuariosDB.js"; 
 
 export function crearCampoForm(etiquetaTexto, tipo, idNombre){
     const contenedorCampo = document.createElement('div');
@@ -45,11 +45,19 @@ export function validarUsuario(inputCorreo){
     const contenedor = inputCorreo.closest('div');
     const spanError = contenedor.querySelector('.alerta');
     const email = inputCorreo.value.trim().toLowerCase();
+    const rejex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const usuarios = obtenerUsuario() || [];
 
     const existe = usuarios.some(u => 
         u && u.email && u.email.toLowerCase() === email
     )
+
+    if (!rejex.test(email)) {
+        spanError.textContent = "Formato correcto: ejemplo@dominio.com";
+        spanError.classList = "whitespace-pre-line text[#556D8B]";
+        inputCorreo.style.borderColor = "#556D8B";
+        return false;
+    }
 
     if (!email) {
     spanError.textContent = "El correo es obligatorio";
@@ -72,5 +80,21 @@ export function validarUsuario(inputCorreo){
 
     console.log('valor: ', inputCorreo.value);
     console.log('usuarios: ', obtenerUsuario());
+    return true;
+}
+
+export function validarCampos(input) {
+    const contenedor = input.closest('div');
+    const spanError = contenedor.querySelector('.alerta');
+
+    if (!input.value.trim()) {
+        spanError.textContent = "Este campo es obligatorio";
+        spanError.style.color = "#556D8B";
+        input.style.borderColor = "#556D8B";
+        return false;
+    }   
+
+    spanError.textContent = "";
+    input.style.borderColor = "";
     return true;
 }

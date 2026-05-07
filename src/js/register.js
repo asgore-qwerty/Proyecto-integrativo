@@ -1,5 +1,5 @@
-import { crearCampoForm, crearBoton, validarUsuario } from "./funciones.js";
-import { obtenerUsuario, agregarUsuario } from "../db/clientesDB.js";
+import { crearCampoForm, crearBoton, validarUsuario, validarCampos } from "./funciones.js";
+import { obtenerUsuario, agregarUsuario } from "../db/usuariosDB.js";
 
 export function register() {
 
@@ -65,25 +65,21 @@ export function register() {
         const inputContraseña = divContraseñaConfirmacion.querySelector('input[type="password"]');
         const inputConfirmarContraseña = divContraseñaConfirmacion.querySelectorAll('input[type="password"]')[1];
 
+        const inputs = formularioRegistro.querySelectorAll('input');
 
-        inputCorreo.addEventListener("blur", (e) => {
-            validarUsuario(e.target);
+        inputs.forEach(input => {
+            input.addEventListener("blur", (e) => {
+                validarCampos(input);
+            });
         });
 
-        /* botonRegistrar.addEventListener("click", (e) => {
-            e.preventDefault();
+        inputCorreo.addEventListener("blur", (e) => {
+            const inputCompletado = validarCampos(e.target);
 
-            agregarUsuario({
-                id: obtenerUsuario().length + 1,
-                nombre: inputNombre.value,
-                fechanacimiento: inputFechaNacimiento.value,
-                correo: inputCorreo.value,
-                telefono: inputTelefono.value,
-                contraseña: inputContraseña.value
-            });
-
-            console.log("Clientes nuevos: ", obtenerUsuario());
-        }); */
+            if (inputCompletado) {
+                 validarUsuario(e.target);
+            }
+        });
 
         const span = document.createElement('span');
         span.classList = "alerta"
@@ -108,15 +104,18 @@ export function register() {
             if (!correoValido) {
                 return;
             }
+            
             const usuarios = obtenerUsuario() || [];
             agregarUsuario({
                 id: usuarios.length + 1,
                 nombre: inputNombre.value,
                 fechanacimiento: inputFechaNacimiento.value,
-                correo: inputCorreo.value,
+                email: inputCorreo.value,
                 telefono: inputTelefono.value,
                 contraseña: inputContraseña.value
             });
+
+            formularioRegistro.reset();
 
             console.log("Clientes nuevos: ", obtenerUsuario());
 
