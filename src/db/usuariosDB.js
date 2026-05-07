@@ -68,9 +68,9 @@ const usuariosDB = [
 
 
 export function obtenerUsuario(){
-    return clientesDB;
+    return usuariosDB;
 };
 
 export function agregarUsuario(usuario){
-    clientesDB.push(usuario);
+    usuariosDB.push(usuario);
 };
