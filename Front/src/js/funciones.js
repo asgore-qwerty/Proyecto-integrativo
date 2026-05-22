@@ -29,11 +29,12 @@ export function crearCampoForm(etiquetaTexto, tipo, idNombre){
     return contenedorCampo;
 }
 
-export function crearBoton(nombre, tipo){
+export function crearBoton(nombre, tipo, id){
 
     const boton = document.createElement('button');
     boton.textContent = nombre;
     boton.type = tipo;
+    boton.id = id;
     boton.classList = "botonRegistro bg-[#64533e] border-none p-1 mb-3 mt-4 rounded-lg cursor-pointer text-[#ebcc90] w-25 flex self-center justify-around";
     boton.style = "box-shadow: 5px 5px 15px -4px #000000";
 
