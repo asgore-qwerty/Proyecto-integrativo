@@ -5,7 +5,7 @@ const usuariosDB = [
     fechaNacimiento: "1990-05-12",
     email: "carolina.ortiz@email.com",
     telefono: "5551234",
-    contrasena: "1234",
+    contraseña: "1234"
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const usuariosDB = [
     fechaNacimiento: "1985-08-20",
     email: "mauricio.castaño@email.com",
     telefono: "5555678",
-    contrasena: "1234",
+    contraseña: "1234"
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const usuariosDB = [
     fechaNacimiento: "1995-12-10",
     email: "felipe.gaviria@email.com",
     telefono: "5559012",
-    contrasena: "1234",
+    contraseña: "1234"
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const usuariosDB = [
     fechaNacimiento: "2000-07-25",
     email: "jonatan.gil@email.com",
     telefono: "5553456",
-    contrasena: "1234",
+    contraseña: "1234"
   },
   {
     id: 5,

@@ -34,7 +34,7 @@ export function login() {
 
         const formularioLogin = document.createElement("form");
         formularioLogin.classList = "formLogin flex flex-col flex-wrap whitespace-normal justify-items-center gap-1";
-        
+
 
         main.appendChild(seccionLogin);
 
@@ -46,23 +46,23 @@ export function login() {
 
         formularioLogin.appendChild(crearCampoForm("Correo", "email", "email"));
 
-        formularioLogin.appendChild(crearCampoForm("Contraseña", "password", "contraseña")); 
+        formularioLogin.appendChild(crearCampoForm("Contraseña", "password", "contraseña"));
 
-        
+
         const anchorRegister = document.createElement("a");
-        anchorRegister.href="";
-        anchorRegister.textContent= "olvidé mi contraseña";
+        anchorRegister.href = "";
+        anchorRegister.textContent = "olvidé mi contraseña";
 
         formularioLogin.appendChild(anchorRegister);
 
-        anchorRegister.addEventListener("click", (e) =>{
+        anchorRegister.addEventListener("click", (e) => {
             e.preventDefault();
-            main.innerHTML="";
-            
+            main.innerHTML = "";
+
             register();
             document.getElementById("aRegister").click();
-            
-            
+
+
         });
 
 
@@ -71,7 +71,7 @@ export function login() {
         formularioLogin.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            
+
             const emailInput = formularioLogin.querySelector('input[type="email"]');
             const passwordInput = formularioLogin.querySelector('input[type="password"]');
 
@@ -80,11 +80,11 @@ export function login() {
 
             const listaUsuarios = obtenerUsuario();
 
-            const usuarioEncontrado = listaUsuarios.find(user => 
+            const usuarioEncontrado = listaUsuarios.find(user =>
                 user.email === email && user.contraseña === password);
 
 
-                if (usuarioEncontrado) {
+            if (usuarioEncontrado) {
                 console.log("Acceso correcto:", usuarioEncontrado.nombre);
 
                 main.innerHTML = "";
@@ -92,15 +92,45 @@ export function login() {
                 saludo.classList = "text-3xl mt-10";
                 saludo.textContent = `¡Bienvenido de nuevo, ${usuarioEncontrado.nombre}!`;
                 main.appendChild(saludo);
-                               
+
+                main.appendChild(crearBoton("Cerrar Sesión", "button", "btnCerrarSesion"));
+                const botonCerrarSesion = main.querySelector("#btnCerrarSesion");
+                botonCerrarSesion.addEventListener("click", () => {
+                    console.log("Sesión cerrada");
+                    main.innerHTML = "";
+                    login();
+                    document.getElementById("aLogin").click();
+                });
+
+                main.appendChild(crearBoton("Ver información", "button", "btnVerInfo"));
+                const botonVerInfo = main.querySelector("#btnVerInfo");
+                botonVerInfo.addEventListener("click", () => {
+                    const info = document.createElement("p")
+                    info.innerHTML = `
+                    <strong>Nombre:</strong> ${usuarioEncontrado.nombre}<br>
+                    <strong>Correo:</strong> ${usuarioEncontrado.email}<br>
+                    <strong>Teléfono:</strong> ${usuarioEncontrado.telefono}<br>
+                    <strong>Fecha de Nacimiento:</strong> ${usuarioEncontrado.fechaNacimiento}`;
+                    main.appendChild(info);
+                });
+
+                main.appendChild(crearBoton("Editar información", "button", "btnEditarInfo"));
+                const botonEditarInfo = main.querySelector("#btnEditarInfo");
+                botonEditarInfo.addEventListener("click", () => {
+                    main.innerHTML = "";
+                });
+
+
+
+
             } else {
-                
+
                 alert("El correo o la contraseña no coinciden con nuestros registros.");
             }
 
-        
 
-            
+
+
         });
 
 
