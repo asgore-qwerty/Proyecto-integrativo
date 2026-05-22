@@ -77,7 +77,7 @@ export function register() {
             const inputCompletado = validarCampos(e.target);
 
             if (inputCompletado) {
-                 validarUsuario(e.target);
+                validarUsuario(e.target);
             }
         });
 

@@ -12,38 +12,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.art4.modelos.Usuario;
-import com.example.art4.servicios.UsuarioServicio;
+import com.example.art4.modelos.Obra;
+import com.example.art4.servicios.ObraServicio;
 
-public class UsuarioControlador {
+public class ObraControlador {
 
     @Autowired
-    UsuarioServicio servicio;
+    ObraServicio servicio;
 
     @PostMapping
-    public ResponseEntity<?>controlarGuardado(@RequestBody Usuario datos){
-        return ResponseEntity.status(HttpStatus.OK).body(servicio.guardar_usuario(datos));
+    public ResponseEntity<?>controlarGuardado(@RequestBody Obra datos){
+        return ResponseEntity.status(HttpStatus.OK).body(servicio.guardar_obra(datos));
     }
 
     @GetMapping
     public ResponseEntity<?>controlarListado(){
-        return ResponseEntity.status(HttpStatus.OK).body(servicio.listar_usuarios());
+        return ResponseEntity.status(HttpStatus.OK).body(servicio.listar_obras());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?>controlarBuscarPorId(@PathVariable UUID id){
-        return ResponseEntity.status(HttpStatus.OK).body(servicio.buscar_usuario_por_id(id));
+        return ResponseEntity.status(HttpStatus.OK).body(servicio.buscar_obra_por_id(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?>controlarModificar(@PathVariable UUID id,@RequestBody Usuario datos){
-        return ResponseEntity.status(HttpStatus.OK).body(servicio.modificar_Usuario(id, datos));
+    public ResponseEntity<?>controlarModificar(@PathVariable UUID id, @RequestBody Obra datos){
+        return ResponseEntity.status(HttpStatus.OK).body(servicio.modificar_Obra(id, datos));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?>controlarEliminar(@PathVariable UUID id){
-        return ResponseEntity.status(HttpStatus.OK).body(servicio.eliminar_usuario(id));
+        return ResponseEntity.status(HttpStatus.OK).body((servicio.eliminar_obra(id)));
     }
-
-
 }
+
