@@ -1,6 +1,7 @@
 import { crearCampoForm, crearBoton, validarUsuario, validarCampos } from "./funciones.js";
 import { obtenerUsuario, agregarUsuario } from "../db/usuariosDB.js";
 import { register } from "./register.js";
+import { modificarInfo } from "./modificarUsuario.js";
 
 
 export function login() {
@@ -117,7 +118,9 @@ export function login() {
                 main.appendChild(crearBoton("Editar información", "button", "btnEditarInfo"));
                 const botonEditarInfo = main.querySelector("#btnEditarInfo");
                 botonEditarInfo.addEventListener("click", () => {
-                    main.innerHTML = "";
+                    
+                    modificarInfo(usuarioEncontrado.id);
+
                 });
 
 

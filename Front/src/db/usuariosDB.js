@@ -74,3 +74,15 @@ export function obtenerUsuario(){
 export function agregarUsuario(usuario){
     usuariosDB.push(usuario);
 };
+
+export function actualizarUsuario(id, datosActualizados){
+
+    const usuario = usuariosDB.find(u => u.id === id);
+    if (!usuario) {
+        return false;
+    }
+
+    Object.assign(usuario, datosActualizados);
+
+    return true;
+};
