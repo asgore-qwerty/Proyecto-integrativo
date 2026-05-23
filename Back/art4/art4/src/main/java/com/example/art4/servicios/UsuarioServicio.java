@@ -30,15 +30,15 @@ public class UsuarioServicio {
     }
 
     public Usuario buscar_usuario_por_id(UUID id){
-        Optional<Usuario> usuario_que_estoy_buscando_transaccion=repositorio.findById(id);
-        if(usuario_que_estoy_buscando_transaccion.isEmpty()){
+        Optional<Usuario> busqueda_usuario_transaccion=repositorio.findById(id);
+        if(busqueda_usuario_transaccion.isEmpty()){
             throw new ResponseStatusException(
                 HttpStatus.BAD_REQUEST,
                 "El usuario que buscas no existe en la DB"
             );
             
         }
-        return usuario_que_estoy_buscando_transaccion.get();
+        return busqueda_usuario_transaccion.get();
     }
 
     public Usuario modificar_Usuario(UUID id, Usuario datosUsuarioNuevos){
