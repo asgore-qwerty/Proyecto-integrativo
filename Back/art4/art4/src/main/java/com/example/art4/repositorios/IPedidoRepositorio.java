@@ -10,4 +10,9 @@ import com.example.art4.modelos.Pedido;
 @Repository
 public interface IPedidoRepositorio extends JpaRepository <Pedido, UUID>{
 
+    
+    list<pedido> findByid(UUID id); 
+    
+
+    
 }
