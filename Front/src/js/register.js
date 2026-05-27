@@ -77,7 +77,7 @@ export function register() {
             const inputCompletado = validarCampos(e.target);
 
             if (inputCompletado) {
-                 validarUsuario(e.target);
+                validarUsuario(e.target);
             }
         });
 
@@ -104,7 +104,7 @@ export function register() {
             if (!correoValido) {
                 return;
             }
-            
+
             const usuarios = obtenerUsuario() || [];
             agregarUsuario({
                 id: usuarios.length + 1,
@@ -119,7 +119,109 @@ export function register() {
 
             console.log("Clientes nuevos: ", obtenerUsuario());
 
+
+
         });
+
+        const url = "https://6a15acb191ff9a63de089963.mockapi.io/api/art4/Obras"
+
+        const contenedorTarjetas = document.createElement("div");
+        contenedorTarjetas.className = ` w-[960px] overflow-hidden rounded-2xl mx-auto mt-10 `;
+
+        const slider = document.createElement("div");
+        slider.className = `flex gap-5 transition-transform duration-1000 ease-in-out`
+
+        const botonApi = crearBoton("Cargar api", "button");
+        botonApi.className = `btnApi bg-[#64533e] border-none p-2 mb-3 mt-4 rounded-lg cursor-pointer text-[#ebcc90] w-25 flex self-center justify-around`;
+
+        main.appendChild(botonApi);
+
+        contenedorTarjetas.appendChild(slider);
+        main.appendChild(contenedorTarjetas);
+
+        const mensajeCarga = document.createElement("p");
+        main.appendChild(mensajeCarga);
+
+
+        botonApi.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            mensajeCarga.textContent = "Cargando api..."
+
+            /* const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+            
+            async function pausa() {
+                await delay(3000);
+                getData();
+            }
+
+            pausa(); */
+
+
+            setTimeout(() => {
+                botonApi.hidden = true;
+                getData();
+            }, 2000);
+
+            async function getData() {
+
+
+                try {
+                    const response = await fetch(url);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const datos = await response.json();
+
+                    datos.forEach(item => {
+                        const tarjeta = document.createElement("div");
+                        tarjeta.className = `tarjeta min-w-[300px] bg-white rounded-2xl shadow-lg p-4 flex-shrink-0`;
+                        tarjeta.innerHTML = `<img src="${item.imagen}" alt="${item.alt}" class=" w-full h-[200px] object-cover rounded-xl">
+                <h2 class="text-md  mt-4">${item.titulo}</h2>` ;
+
+                        slider.appendChild(tarjeta);
+                    });
+
+                    let posicion = 1;
+
+                    const tarjetas = document.querySelectorAll(".tarjeta");
+
+                    const moverSlider = () => {
+                        
+                        if (tarjetas.length === 0) return;
+
+                        slider.style.transform = `translateX(-${posicion * 300}px)`;
+                        slider.style.transition = `transform 3s linear`;
+
+                        posicion++;
+
+                        if (posicion > tarjetas.length - 3) {
+                            posicion = 0;
+                        }
+                        
+                        setTimeout(() => {
+                            moverSlider();
+                        }, 2990);
+                    };
+                    
+                    moverSlider();
+                    console.log(datos);
+
+                    mensajeCarga.innerHTML = "";
+
+                   
+                } catch (error) {
+                    console.log("Error al cargar la api: ", error);
+
+                    main.innerHTML = `<h2>Error al cargar los datos</h2>`;
+                }
+            }
+
+            
+
+        })
 
     });
 
