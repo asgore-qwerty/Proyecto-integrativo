@@ -148,16 +148,6 @@ export function register() {
 
             mensajeCarga.textContent = "Cargando api..."
 
-            /* const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-            
-            async function pausa() {
-                await delay(3000);
-                getData();
-            }
-
-            pausa(); */
-
-
             setTimeout(() => {
                 botonApi.hidden = true;
                 getData();
