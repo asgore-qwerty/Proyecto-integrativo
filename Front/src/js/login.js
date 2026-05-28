@@ -89,6 +89,7 @@ export function login() {
                 console.log("Acceso correcto:", usuarioEncontrado.nombre);
 
                 main.innerHTML = "";
+
                 const saludo = document.createElement("h2");
                 saludo.classList = "text-3xl mt-10";
                 saludo.textContent = `¡Bienvenido de nuevo, ${usuarioEncontrado.nombre}!`;
@@ -120,8 +121,8 @@ export function login() {
 
 
                     setTimeout(() => {
-
-                    }, 10000);
+                        
+                    }, 2000);
 
                     async function getData() {
 
@@ -174,9 +175,12 @@ export function login() {
 
                 contenedorBotones.appendChild(crearBoton("Ver info", "button", "btnVerInfo"));
                 const botonVerInfo = main.querySelector("#btnVerInfo");
+
+
                 botonVerInfo.addEventListener("click", () => {
 
                     contenedorInfo.innerHTML = "";
+
                     const info = document.createElement("p")
                     info.innerHTML = `
                     <strong>Nombre:</strong> ${usuarioEncontrado.nombre}<br>
@@ -188,13 +192,11 @@ export function login() {
 
                 contenedorBotones.appendChild(crearBoton("Editar info", "button", "btnEditarInfo"));
                 const botonEditarInfo = main.querySelector("#btnEditarInfo");
+                
                 botonEditarInfo.addEventListener("click", () => {
                     contenedorInfo.innerHTML = "";
-                    seccionLogin.innerHTML = "";
+                    modificarInfo(usuarioEncontrado.id, contenedorInfo);
                     
-
-                    modificarInfo(usuarioEncontrado.id);
-
                 });
 
                 contenedorBotones.appendChild(crearBoton("Cerrar Sesión", "button", "btnCerrarSesion"));
