@@ -1,4 +1,4 @@
-#ART4
+# ART4
 
 _Art4 es una página web donde puedes encontrar un catálogo con diferentes obras de arte exclusivas. Podrás crear una cuenta e iniciar sesión para tener acceso a obras de arte diferentes y más exclusivas, 
 _que más adelante podrá comprar y almacenar en un carrito de compras.
@@ -9,7 +9,7 @@ _que más adelante podrá comprar y almacenar en un carrito de compras.
 * Css
 * Javascript
 
-##Consumo de api
+## Consumo de api
 _Cada autor realizó el consumo de una api, agregando un botón que muestra un mensaje de carga mientras la información de la api llega. El proceso se realiza de esta manera:
 * Lo primero que se hace es que se realiza una función asíncrona (esto para que la página no se congele mientras hace la petición a la api, y pueda continuar su flujo normal).
   ```
@@ -46,7 +46,7 @@ _Cada autor realizó el consumo de una api, agregando un botón que muestra un m
   getData();
   ```
 
-##Autores
+## Autores
 * **Mauricio Castaño
 * **Jonatan Gil
 * **Juan Felipe Gaviria
