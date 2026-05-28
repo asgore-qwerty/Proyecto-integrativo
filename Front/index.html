@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" class="text-base w-screen">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art4</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" type="image/png" href="src/imgs/Wireframe.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="m-0 p-0 h-full overflow-x-hidden">
+    <button style="box-shadow: 5px 5px 15px -4px #000000"
+        class="fixed bottom-10 left-4 z-50 w-14 h-14 flex items-center justify-center bg-[#4b3f2f] border-none p-1 rounded-xl cursor-pointer text-3xl"><a
+            class="bg-transparent" href="contact.html">💬</a></button>
+    <header class="text-[#8b7355] w-full sticky top-0 z-1000 bg-[#c9a66b] flex justify-between items-center gap-2">
+        <a class="whitespace-normal min-w-0 text-[#775935]" href="index.html"><img src="src/imgs/Logo.png" width="130"
+                alt="Art4" /></a>
+        <nav class="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row xl:flex-row justify-around pr-10">
+            
+            <ul class="flex gap-2 pl-2">
+                <li class="inline"><a id="aRegister" class="whitespace-normal min-w-0 text-[#775935]" href="">Registrarse</a></li>
+                <li class="inline"><a id="aLogin" class="whitespace-normal min-w-0 text-[#775935]" href="">Ingresar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="h-full w-full flex flex-col md:flex-row md:flex-nowrap m-0 gap-2 md:items-start">
+        <aside
+            class="xl:w-40 flex p-4 w-auto text-justify md:flex-shrink-0 md:w-38 lg:w-40 md:sticky md:top-16 md:h-screen md:overflow-auto bg-gradient-to-br from-[#606060] to-[#000000]">
+            <nav class="h-fit">
+                <ul class="text-[#ffffff] flex flex-col gap-1">
+                    <h2 class="text-2xl">Categorías</h2>
+                    <li><a href="#">Realismo</a></li>
+                    <li><a href="#">Impresionismo</a></li>
+                    <li><a href="#">Expresionismo</a></li>
+                    <li><a href="#">Surrealismo</a></li>
+                    <li><a href="#">Hiperrealismo</a></li>
+                    <li><a href="#">Cubismo</a></li>
+                    <li><a href="#">Arte pop</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div id="main-footer" class="flex-1 min-w-0 h-full flex flex-col content-around">
+            <main>
+                <section id="seccionCatalogoFiltros"
+                    class="p-4">
+                    <h1 class="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#cfb583] p-6">Catálogo de
+                        Obras</h1>
+                    <section class="flex gap-2">
+                        <select id="campoFiltro"
+                            class="h-8 sm:h-9 md:h-10 w-20 sm:w-24 md:w-32 lg:w-40 text-xs sm:text-sm md:text-base text-[#cfb583] bg-[#8b7355] rounded-[0.6rem] border-none cursor-pointer"
+                            style="box-shadow: 5px 5px 15px -4px #000000">
+                            <option label="Filtro" disabled selected></option>
+                            <option value="autor">Autor</option>
+                            <option value="titulo">Titulo</option>
+                            <option value="año">Año</option>
+
+                            </select>
+
+                            
+                        <input
+                            class="h-8 sm:h-9 md:h-10 w-20 sm:w-24 md:w-32 lg:w-40 text-xs sm:text-sm md:text-base text-[#cfb583] bg-[#8b7355] rounded-[0.6rem] border-none cursor-pointer"
+                            id="valorFiltro" type="text" placeholder="Valor del filtro..." />
+                            <button
+                                id="limpiarFiltro"    
+                            class="h-8 sm:h-9 md:h-10 w-20 sm:w-24 md:w-32 lg:w-40 text-xs sm:text-sm md:text-base text-[#cfb583] bg-[#8b7355] rounded-[0.6rem] border-none cursor-pointer">
+                                Limpiar filtro
+                            </button>
+
+                            <button id="fetchObra"
+                                class="h-8 sm:h-9 md:h-10 w-20 sm:w-24 md:w-32 lg:w-40 text-xs sm:text-sm md:text-base text-[#cfb583] bg-[#8b7355] rounded-[0.6rem] border-none cursor-pointer">
+                                Buscar / Obtener obras
+                            </button>
+                    </section>
+                    
+                </section>
+                <section id="seccionCatalogoObras" class="flex flex-wrap justify-center content-stretch gap-4">
+
+
+
+                    <br>
+                    <br>
+                </section>
+            </main>
+
+            <footer
+                class="fixed bottom-0 left-0 w-full h-12 flex flex-col items-center justify-center text-center text-xs sm:text-sm text-[#8f846e] bg-gradient-to-t from-[#373737] to-transparent">
+                <p class="m-0" style="text-shadow: 4px 4px 4px #0a0a0a">© 2025 Bookify. Todos los derechos reservados.
+                </p>
+                <p class="m-0 text-xs" style="text-shadow: 4px 4px 4px #0a0a0a">Política de privacidad • Términos y
+                    condiciones</p>
+            </footer>
+        </div>
+    </div>
+    <script type="module" src="src/js/main.js"></script>
+</body>
+
+</html>
