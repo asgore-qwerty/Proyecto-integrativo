@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art4 - Contáctenos</title>
     <link rel="shortcut icon" href="src/imgs/Wireframe.png" type="image/x-icon">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
@@ -70,8 +70,8 @@
                         class="w-full md:w-[320px] p-2 rounded text-gray-600 bg-white" id="asunto" required>
 
                     <textarea placeholder="Observaciones"
-                        class="w-full h-[140px] p-3 rounded text-gray-600 resize-none bg-white" id="observaciones"
-                        required></textarea>
+                        class="w-full h-[140px] p-3 rounded text-gray-600 resize-none bg-white"
+                        id="observaciones" required></textarea>
 
                     <div>
                         <button class="bg-[#4b3f2f] text-white px-8 py-2 rounded w-full md:w-auto shadow-lg"
@@ -82,12 +82,15 @@
                             id="botonBuscar">
                             Buscar
                         </button>
+                        <button class="bg-[#4b3f2f] text-white px-8 py-2 rounded shadow-lg" id="botonCargar">
+                            Cargar Reseñas
+                        </button>
                     </div>
 
                 </div>
 
                 <div class="contacto" id="contacto"> </div>
-
+                
             </section>
         </main>
     </div>
@@ -107,7 +110,7 @@
             © 2025 Bookify. Todos los derechos reservados.
         </p>
     </footer>
-    <script src="contact.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
