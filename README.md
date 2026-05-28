@@ -1,4 +1,4 @@
-#ART4
+# ART4
 
 _Art4 es una página web donde puedes encontrar un catálogo con diferentes obras de arte exclusivas. Podrás crear una cuenta e iniciar sesión para tener acceso a obras de arte diferentes y más exclusivas, que más adelante podrá comprar y almacenar en un carrito de compras._
 
