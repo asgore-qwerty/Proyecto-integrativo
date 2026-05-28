@@ -2,14 +2,18 @@ import { actualizarUsuario, obtenerUsuario } from "../db/usuariosDB.js";
 import { crearCampoForm, crearBoton } from "./funciones.js";
 
 export function modificarInfo(id) {
+   
 
     const main = document.querySelector("main");
 
+      
     const seccion = document.createElement("section");
     seccion.classList = "h-auto mt-8 sm:mt-15 md:mt-15 lg:mt-15 xl:mt-15 flex w-auto p-3 items-center flex-col bg-[#8b7355] rounded-xl text-[#cfb583] border-none pb-px flex-wrap";
     seccion.style = "box-shadow: 5px 5px 15px -4px #000000";
 
-    seccion.innerHTML = "";
+    
+    seccion.innerHTML = ``;
+    
 
     const formularioModificar = document.createElement("form");
     formularioModificar.classList = "flex flex-col flex-wrap whitespace-normal justify-items-center w-auto";
