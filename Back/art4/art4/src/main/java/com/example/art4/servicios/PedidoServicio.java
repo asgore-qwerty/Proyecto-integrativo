@@ -59,7 +59,7 @@ public class PedidoServicio {
         }
         //Cambio los datos que me envieen
         //nombres y la contraseña
-        Pedido pedido_encontrar_en_bd=pedido_que_estoy_buscando_transaccion.get();
+        Pedido pedido_encontrar_en_bd = pedido_que_estoy_buscando_transaccion.get();
 
         pedido_encontrado_en_bd.setNombres(datosPedidoNuevos.getNombres());
         pedido_encontrado_en_bd.setContarseña(datospedidoNuevos.getContarseña());
