@@ -1,11 +1,43 @@
-import obrasDB from "../db/ObrasDB.js";
+
+const url = "https://6a179a281878294b597ba7d9.mockapi.io/api/art4/Obras"
 
 const main = document.querySelector("main");
 
-function renderizarObras(arrayObras) {
-    const articles = document.getElementById("seccionCatalogoObras");
+const botonFetch = document.getElementById("fetchObra");
+let obras = [];
 
-const obrasHtml = arrayObras.map(obra => `<article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
+export function home() {
+
+    botonFetch.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    setTimeout(() => {
+
+        botonFetch.hidden = true;
+        renderizarObras();
+    }, 2000);
+
+})
+
+    async function renderizarObras(lista) {
+
+        try {
+
+            if (lista === undefined) {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+
+                    throw new Error(`Error: ${response.status}`);
+                }
+
+                obras = await response.json();
+                lista = obras;
+            }
+
+            const articles = document.getElementById("seccionCatalogoObras");
+
+            const obrasHtml = lista.map(obra => `<article class="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 xl:w-60 xl:h-60 box-shadow 5px 5px 15px -4px [#000000] p-2 sm:p-3 md:p-4 bg-[#8b7355]
                     transition delay-150 duration-300 ease-in-out rounded-xl text-[#cfb583] border-none hover:scale-105 transition-transform 
                     duration-300 hover:bg-[#9c8463] flex flex-col items-center">
     <a href="#" class="w-full h-full flex items-center justify-center overflow-hidden"><img
@@ -24,53 +56,43 @@ const obrasHtml = arrayObras.map(obra => `<article class="w-40 h-40 sm:w-44 sm:h
             </tr>
             <tr>
                 <th>Año</th>
-                <td>${obra.año}</td>
-            </tr>
-            <tr>
-                <th>Estilo</th>
-                <td>${obra.estilo}</td>
+                <td>${obra.fecha}</td>
             </tr>
         </table>
     </div>
 </article>`).join("");
 
-    articles.innerHTML = obrasHtml;
+            articles.innerHTML = obrasHtml;
 
-}
+
+        } catch (error) {
+            console.log("No se ha podido renderizar las obras");
+        }
+    }
 
 const campoSelect = document.getElementById("campoFiltro");
 const valorFiltro = document.getElementById("valorFiltro");
 const botonLimpiar = document.getElementById("limpiarFiltro");
 
-botonLimpiar.addEventListener("click", function() {
+botonLimpiar.addEventListener("click", function () {
     valorFiltro.value = "";
-    renderizarObras(obrasDB);
+    renderizarObras();
 });
 
-campoSelect.addEventListener("change", function() {
+campoSelect.addEventListener("change", function () {
     valorFiltro.value = "";
     valorFiltro.placeholder = `Ingrese el ${campoSelect.value.toLowerCase()}...`;
 });
 
-valorFiltro.addEventListener("input", function() {
+valorFiltro.addEventListener("input", function () {
     const campo = campoSelect.value.toLowerCase();
     const valor = valorFiltro.value.trim().toLowerCase();
 
-    const obrasFiltradas = obrasDB.filter(obra => {
+    const obrasFiltradas = obras.filter(obra => {
         return obra[campo]?.toString().toLowerCase().includes(valor);
     });
 
     renderizarObras(obrasFiltradas);
 });
+}
 
-const inicializar = window.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM listo, cargando pagina...');
-    renderizarObras(obrasDB);
-});
-
-
-
-
-export { inicializar };
-
-export { renderizarObras };
