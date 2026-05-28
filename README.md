@@ -47,7 +47,7 @@ _Cada autor realizó el consumo de una api, agregando un botón que muestra un m
   ```
 
 ##Autores
-* **Mauricio Castaño
-* **Jonatan Gil
-* **Juan Felipe Gaviria
-* **Carolina Ortiz
+* ** Mauricio Castaño
+* ** Jonatan Gil
+* ** Juan Felipe Gaviria
+* ** Carolina Ortiz
