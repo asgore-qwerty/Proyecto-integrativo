@@ -10,7 +10,7 @@ const bd = [{
 const botonEnviar = document.getElementById("botonEnviar");
 const botonBuscar = document.getElementById("botonBuscar");
 const contenedor = document.getElementById("contacto");
-
+const botonCargar = document.getElementById("botonCargar");
 
 
 const obtenerValores = () => {
@@ -40,7 +40,7 @@ const obtenerValores = () => {
 
     document.getElementById("nombre").value = "";
     document.getElementById("correo").value = "";
-    document.getElementById("telefono").value = "";     //esto lo que hace de la linea 41 a 45 es reiniciar los input, que queden vacios
+    document.getElementById("telefono").value = "";    
     document.getElementById("asunto").value = "";
     document.getElementById("observaciones").value = "";
 
@@ -50,7 +50,7 @@ const obtenerValores = () => {
     <p>Telefono: ${telefono}</p>
     <p>Asunto: ${asunto}</p>
     <p>Observación: ${observaciones}</p>`;
-//seutilizan las comillas al reves para poder utilzar las variables dentro del string
+
     contenedor.innerHTML = respuesta;
 
     setTimeout(() => { contenedor.innerHTML = ""; }, 10000);
@@ -85,5 +85,46 @@ const buscarValores = () => {
 
 };
 
+const cargarResenias = async () => {
+    
+    contenedor.innerHTML = `<p class="cargando">Cargando...</p>`;
+
+    try {
+        const datos = await fetch("https://6a15acb191ff9a63de089963.mockapi.io/api/art4/resenias");
+
+        if (!datos.ok) {
+            throw new Error(`Error del servidor: ${datos.status}`);
+        }
+
+        const data = await datos.json();
+        console.log("Reseñas cargadas:", data);
+
+        
+        contenedor.innerHTML = "<h3>Reseñas de la comunidad</h3>";
+
+        data.forEach((item) => {
+            const tarjeta = document.createElement("div");
+            tarjeta.classList.add("tarjeta-resenia");
+
+        
+
+            tarjeta.innerHTML = `
+                <p class="resenia-nombre">${item.nombre}</p>
+                <p class="resenia-puntuacion"> ${item.puntuacion}</p>
+                <p class="resenia-texto">${item.resenia}</p>`;
+
+            contenedor.appendChild(tarjeta);
+        });
+
+    } catch (error) {
+       
+        contenedor.innerHTML = `
+            <p class="error-mensaje">No se pudieron cargar los datos. Intenta más tarde.</p>`;
+        console.error("Error al cargar reseñas:", error);
+    }
+};
+
 botonEnviar.addEventListener("click", obtenerValores);
 botonBuscar.addEventListener("click", buscarValores);
+botonCargar.addEventListener("click", cargarResenias);
+
