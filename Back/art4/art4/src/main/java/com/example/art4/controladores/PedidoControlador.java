@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.art4.modelos.Pedido;
 import com.example.art4.servicios.PedidoServicio;
-import com.example.art4.repositorios.IPedidoRepositorio;
 
 @RestController
 @RequestMapping("/api/v1/pedidos")

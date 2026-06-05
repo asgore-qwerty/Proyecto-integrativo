@@ -29,8 +29,8 @@ public class PedidoServicio {
     //traer/leer/buscar/obtener (GET)
 
     //buscar todos los registro de la tabla
-    public List<pedido> listar_Pedidos(){
-        List<pedido> resultadoTransaccion=repositorio.findAll();
+    public List<Pedido> listar_Pedidos(){
+        List<Pedido> resultadoTransaccion=repositorio.findAll();
         return resultadoTransaccion;
     }
 
@@ -50,7 +50,7 @@ public class PedidoServicio {
 
     //modificar/cambiar/actualizar (PUT)
     public Pedido modificar_Pedido(UUID id, Pedido datosPedidoNuevos){
-        Optional<Pedido>Pedido_que_estoy_buscando_transaccion=repositorio.findById(id);
+        Optional<Pedido>pedido_que_estoy_buscando_transaccion=repositorio.findById(id);
         if (pedido_que_estoy_buscando_transaccion.isEmpty()){
             throw new ResponseStatusException(
                 HttpStatus.BAD_REQUEST,
@@ -59,10 +59,9 @@ public class PedidoServicio {
         }
         //Cambio los datos que me envieen
         //nombres y la contraseña
-        Pedido pedido_encontrar_en_bd = pedido_que_estoy_buscando_transaccion.get();
+        Pedido pedido_encontrado_en_bd = pedido_que_estoy_buscando_transaccion.get();
 
-        pedido_encontrado_en_bd.setNombres(datosPedidoNuevos.getNombres());
-        pedido_encontrado_en_bd.setContarseña(datospedidoNuevos.getContarseña());
+        pedido_encontrado_en_bd.setCostoTotal(datosPedidoNuevos.getCostoTotal());
 
         return repositorio.save(pedido_encontrado_en_bd);
     }
