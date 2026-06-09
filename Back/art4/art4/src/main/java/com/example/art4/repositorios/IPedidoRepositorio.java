@@ -1,5 +1,6 @@
 package com.example.art4.repositorios;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,7 +12,7 @@ import com.example.art4.modelos.Pedido;
 public interface IPedidoRepositorio extends JpaRepository <Pedido, UUID>{
 
     
-    list<pedido> findByid(UUID id); 
+    List<Pedido> findByid(UUID id); 
     
 
     

@@ -3,7 +3,7 @@ import { obtenerUsuario, agregarUsuario } from "../db/usuariosDB.js";
 import { register } from "./register.js";
 import { modificarInfo } from "./modificarUsuario.js";
 
-const url = "https://6a1080f4d2a985707036e0c1.mockapi.io/api/recomendadas/obrasRecomendadas";
+const url = "http://localhost:8080/api/arte/populares";
 export function login() {
 
     const main = document.querySelector("main");
@@ -135,14 +135,15 @@ export function login() {
                             }
 
                             const datos = await response.json();
+                            const obrasLogin = datos.data;
 
 
-                            datos.forEach(obra => {
+                            obrasLogin.forEach(obra => {
                                 const tarjeta = document.createElement("div");
                                 tarjeta.className = "bg-[#8b7355] rounded-2xl shadow-lg p-4 transition-transform hover:scale-105 duration-300";
-                                tarjeta.innerHTML = ` <img src="${obra.imagen}" alt="${obra.alt}" class="w-full h-[200px] object-cover rounded-xl">
-                                                      <h2 class="text-md font-bold mt-4  text-gray-800">${obra.titulo}</h2> <p class="text-sm  mt-2 
-                                                      text-gray-800">${obra.autor}</p>`;
+                                tarjeta.innerHTML = ` <img src="${obra.image}" alt="${obra.title}" class="w-full h-[200px] object-cover rounded-xl">
+                                                      <h2 class="text-md font-bold mt-4  text-gray-800">${obra.title}</h2> <p class="text-sm  mt-2 
+                                                      text-gray-800">${obra.artistName}</p>`;
 
                                 contenedorTarjetas.appendChild(tarjeta);
                             });

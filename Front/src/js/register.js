@@ -123,7 +123,7 @@ export function register() {
 
         });
 
-        const url = "https://6a15acb191ff9a63de089963.mockapi.io/api/art4/Obras"
+        const url = "http://localhost:8080/api/arte/populares"
 
         const contenedorTarjetas = document.createElement("div");
         contenedorTarjetas.className = ` w-[960px] overflow-hidden rounded-2xl mx-auto mt-10 `;
@@ -164,12 +164,13 @@ export function register() {
                     }
 
                     const datos = await response.json();
+                    const obrasRegister = datos.data;
 
-                    datos.forEach(item => {
+                    obrasRegister.forEach(item => {
                         const tarjeta = document.createElement("div");
                         tarjeta.className = `tarjeta min-w-[300px] bg-white rounded-2xl shadow-lg p-4 flex-shrink-0`;
-                        tarjeta.innerHTML = `<img src="${item.imagen}" alt="${item.alt}" class=" w-full h-[200px] object-cover rounded-xl">
-                <h2 class="text-md  mt-4">${item.titulo}</h2>` ;
+                        tarjeta.innerHTML = `<img src="${item.image}" alt="${item.title}" class=" w-full h-[200px] object-cover rounded-xl">
+                <h2 class="text-md  mt-4">${item.title}</h2>` ;
 
                         slider.appendChild(tarjeta);
                     });
